@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/hynek/Dev/xit1/assignment_01/rgb'
+relocations:     []
+...
