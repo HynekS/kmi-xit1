@@ -13,11 +13,13 @@ typedef struct {
 
 #define RGB_COMPONENT_COLOR 255
 
+// https://stackoverflow.com/a/2699908/8252267
 static PPMImage *readPPM(const char *filename) {
   char buff[16];
   PPMImage *img;
   FILE *fp;
   int c, rgb_comp_color;
+
   // open PPM file for reading
   fp = fopen(filename, "rb");
   if (!fp) {
@@ -76,13 +78,13 @@ static PPMImage *readPPM(const char *filename) {
   // memory allocation for pixel data
   img->data = (PPMPixel *)malloc(img->x * img->y * sizeof(PPMPixel));
 
-  if (!img) {
+  if (!img->data) {
     fprintf(stderr, "Unable to allocate memory\n");
     exit(1);
   }
 
   // read pixel data from file
-  if (fread(img->data, 3 * img->x, img->y, fp) != img->y) {
+  if (fread(img->data, sizeof(PPMPixel), img->x * img->y, fp) != img->x * img->y) {
     fprintf(stderr, "Error loading image '%s'\n", filename);
     exit(1);
   }
@@ -91,6 +93,7 @@ static PPMImage *readPPM(const char *filename) {
   return img;
 }
 
+// https://stackoverflow.com/a/2699908/8252267
 void writePPM(const char *filename, PPMImage *img) {
   FILE *fp;
   // open file for output
@@ -111,7 +114,7 @@ void writePPM(const char *filename, PPMImage *img) {
   fprintf(fp, "%d\n", RGB_COMPONENT_COLOR);
 
   // pixel data
-  fwrite(img->data, 3 * img->x, img->y, fp);
+  fwrite(img->data, sizeof(unsigned char), 3 * img->x * img->y, fp);
   fclose(fp);
 }
 
@@ -190,12 +193,11 @@ void saturationBalance(PPMImage *img) {
 int main() {
   PPMImage *image;
   image = readPPM("sample_640x426.ppm");
-  // changeColorPPM(image);
-  // convertToGrayscale(image);
-  // desaturate(image, 0.5);
   saturationBalance(image);
   writePPM("sample_640x426_2.ppm", image);
   free(image->data);
-  printf("Press any key...");
+  free(image);
+  image = NULL;
+  printf("Press Enter to continue...");
   getchar();
 }
