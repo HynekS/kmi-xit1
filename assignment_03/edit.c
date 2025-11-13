@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdlib.h>
 
 #include "pgma_io.h"
@@ -106,7 +107,9 @@ PGMImage *change_contrast(PGMImage *img, float amount) {
     int val = img->g[i];
     float delta = (val - mid_val) * normalized_amount;
     int new_value = (int)roundf(val + delta);
-    int new_value_normalized =  new_value < 0 ? 0 : new_value > img->maxg ? img->maxg : new_value;
+    int new_value_normalized = new_value < 0           ? 0
+                               : new_value > img->maxg ? img->maxg
+                                                       : new_value;
     g[i] = new_value_normalized;
   }
 
@@ -139,7 +142,9 @@ PGMImage *change_brightness(PGMImage *img, float amount) {
   for (int i = 0; i < total_pixels; i++) {
     int val = img->g[i];
     int new_value = (int)roundf(val + resolved_amount);
-    int new_value_normalized =  new_value < 0 ? 0 : new_value > img->maxg ? img->maxg : new_value;
+    int new_value_normalized = new_value < 0           ? 0
+                               : new_value > img->maxg ? img->maxg
+                                                       : new_value;
     g[i] = new_value_normalized;
   }
 
@@ -167,7 +172,9 @@ PGMImage *change_gamma(PGMImage *img, float gamma, float c) {
   for (int i = 0; i < total_pixels; i++) {
     int val = img->g[i];
     int new_value = (int)roundf(pow(val, gamma) * c);
-    int new_value_normalized =  new_value < 0 ? 0 : new_value > img->maxg ? img->maxg : new_value;
+    int new_value_normalized = new_value < 0           ? 0
+                               : new_value > img->maxg ? img->maxg
+                                                       : new_value;
     g[i] = new_value_normalized;
   }
 
@@ -190,15 +197,42 @@ int main() {
 
   PGMImage *balanced_histogram_img = histogram_balance(img);
 
-  pgma_write("screws.ascii.balanced.pgm", "balanced",
+  pgma_write("screws.ascii.balanced.pgm", "balanced histogram",
              balanced_histogram_img->xsize, balanced_histogram_img->ysize,
              balanced_histogram_img->maxg, balanced_histogram_img->g);
+
+  PGMImage *updated_contrast_img = change_contrast(img, 0.8);
+
+  pgma_write("screws.ascii.contrast.pgm", "contrast 0.8",
+             updated_contrast_img->xsize, updated_contrast_img->ysize,
+             updated_contrast_img->maxg, updated_contrast_img->g);
+
+  PGMImage *updated_brightness_img = change_brightness(img, -0.5);
+
+  pgma_write("screws.ascii.brightness.pgm", "brightness -0.5",
+             updated_brightness_img->xsize, updated_brightness_img->ysize,
+             updated_brightness_img->maxg, updated_brightness_img->g);
+
+  PGMImage *updated_gamma_img = change_gamma(img, 1.25, 1);
+
+  pgma_write("screws.ascii.gamma.pgm", "gamma ^1.25", updated_gamma_img->xsize,
+             updated_gamma_img->ysize, updated_gamma_img->maxg,
+             updated_gamma_img->g);
 
   free(img->g);
   free(img);
 
   free(balanced_histogram_img->g);
   free(balanced_histogram_img);
+
+  free(updated_contrast_img->g);
+  free(updated_contrast_img);
+
+  free(updated_brightness_img->g);
+  free(updated_brightness_img);
+
+  free(updated_gamma_img->g);
+  free(updated_gamma_img);
 
   return 0;
 }
