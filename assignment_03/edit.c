@@ -1,3 +1,4 @@
+// gcc edit.c pgma_io.c -o edit
 #include <math.h>
 #include <stdlib.h>
 

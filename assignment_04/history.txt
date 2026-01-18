@@ -1,0 +1,2876 @@
+    1  s
+    2  git reset .
+    3  git checkout -b feature/VWA-0000_hide-console-log-and-error-toast
+    4  git add .
+    5  git commit -m "Hide console.log, hide basket update error toast message"
+    6  giot upstream
+    7  git upstream
+    8  git switch develop
+    9  git pull --rebase
+   10  br
+   11  git switch feature/VWA-3268
+   12  git pull --rebase
+   13  s
+   14  cd frontend/client_admin
+   15  pnpm start
+   16  s
+   17  git checkout -b "feature/VWA-3307_discount-deletion-fix"
+   18  git upstream
+   19  s
+   20  git add .
+   21  git commit -m "Fix discount deletion"
+   22  git puhs
+   23  git push
+   24  git switch -
+   25  git pull --rebase
+   26  cd frontend/eshop
+   27  pnpm dev
+   28  cd .. 
+   29  cd admin
+   30  pnpm start
+   31  git checkout -b "feature/VWA-3282_admin-price-table-fix"
+   32  s
+   33  cd ..
+   34  git add .
+   35  git commit -m "Fix condition"
+   36  git upstream
+   37  cd ..
+   38  git switch feature/VWA-3268
+   39  git pull --rebase
+   40  cd eshop
+   41  pnpm dev
+   42  s
+   43  git pull --rebase
+   44  pnpm dev
+   45  s
+   46  cd packages/vinisto-api-client
+   47  pnpm gt https://vwa-3268.vinisto.dev/
+   48  git checkout -b "feature/VWA-3321_vinsto-plus-eshop"
+   49  s
+   50  git commit -m "Update types"
+   51  s
+   52  cd ..
+   53  s
+   54  cd ..
+   55  s
+   56  git add .
+   57  git commit -m "Update product-detail server data source"
+   58  git push
+   59  git upstream
+   60  s
+   61  git add .
+   62  git commit -m "Add vinistoPlusPriceOrDiscount to adapter"
+   63  git push
+   64  git pull --rebase
+   65  s
+   66  tsc --noEmit
+   67  cd eshop
+   68  tsc --noEmit
+   69  s
+   70  git commit -m "Fix some adapter typing errors"
+   71  git push
+   72  git add .
+   73  git commit -m "Update api request shape"
+   74  s
+   75  git push
+   76  git pull --rebase
+   77  s
+   78  cd ..
+   79  s
+   80  git add .
+   81  git commit -m "Fix getIdentical... api call"
+   82  git push
+   83  s
+   84  git add .
+   85  git commit -m "Fix some issues (a lot of, actually)"
+   86  git push
+   87  s
+   88  git add .
+   89  git commit -m "Fix missing priceLevel issue for logged in users"
+   90  git push
+   91  s
+   92  pnpm dev
+   93  cd ..
+   94  cd admin
+   95  br
+   96  git switch feature/VWA-3268
+   97  git pull --rebase
+   98  clear
+   99  tsc --noEmit
+  100  s
+  101  tsc --noEmit
+  102  cd admin
+  103  tsc --noEmit
+  104  s
+  105  git checkout -b "feature/VWA-3324_admin-api-update"
+  106  s
+  107  clear
+  108  pnpm start
+  109  s
+  110  git add .
+  111  cd ..
+  112  s
+  113  git add .
+  114  git commit -m "Update api calls due to api changes"
+  115  git upstream
+  116  cd ..
+  117  cd eshop
+  118  pnpm dev
+  119  cd ..
+  120  cd ad
+  121  cd admin
+  122  pnpm start
+  123  s
+  124  git init
+  125  git add .
+  126  cd ..
+  127  cd docker-compose-lamp
+  128  git init
+  129  git add .
+  130  git commit -m "Initial commit"
+  131  pnpx serve
+  132  s
+  133  git br
+  134  git switch feature/VWA-3268
+  135  git pull --rebase
+  136  cd frontend/packages/vinisto-api-client
+  137  pnpm gt https://vwa-3268.vinisto.dev/
+  138  br
+  139  git checkout -b "feature/vwa-3325_client-admin-api-updates"
+  140  s
+  141  cd ..
+  142  s
+  143  cd client_admin
+  144  pnpm start
+  145  s
+  146  git add .
+  147  git commit -m "Update api call, improve style"
+  148  s
+  149  git upstream
+  150  cd ..
+  151  br
+  152  git switch feature/VWA-3268
+  153  git pull --rebase
+  154  s
+  155  cd eshop
+  156  pnpm dev
+  157  s
+  158  git stash push
+  159  git stash pop
+  160  s
+  161  git checkout -b "feature/VWA-3326_vinisto-plus-fixes-1"
+  162  git add .
+  163  git commit -m "Fix higher prices + user update after subscribe"
+  164  git upstream
+  165  git pull --rebase
+  166  s
+  167  git switch develop
+  168  git pull --rebase
+  169  s
+  170  git checkout -b "bugfix/VWA-3106_basket-error-toasts"
+  171  git add .
+  172  s
+  173  d
+  174  gdc
+  175  git commit -m "Comment out basket error toast notifications"
+  176  s
+  177  git add .
+  178  s
+  179  git add .
+  180  git commit --amend
+  181  git upstream
+  182  s
+  183  git add .
+  184  git commit -m "Make app dynamic"
+  185  cd frontend/admin
+  186  git br
+  187  git switch feature/VWA-3268
+  188  git pull --rebase
+  189  pnpm start
+  190  cd ..
+  191  s
+  192  cd eshop
+  193  pnpm dev
+  194  s
+  195  git checkout -b "feature/VWA-3326_vinisto-plus-fixes-2"
+  196  git add .
+  197  git commit -m "Update discount calculation"
+  198  s
+  199  git upstream
+  200  git pull --rebase
+  201  git switch -
+  202  git pull --rebase
+  203  s
+  204  git checkout -b "feature/VWA-3326_vinisto-plus-fixes-3"
+  205  git add .
+  206  git commit -m "Implement proper refetch function"
+  207  git upstream
+  208  s
+  209  git add .
+  210  git commit -m "Add comment"
+  211  git push
+  212  git switch -
+  213  git pull --rebase
+  214  s
+  215  git pull --rebase
+  216  cd ..
+  217  cd client_admin
+  218  pnpm start
+  219  d
+  220  cd frontend/client_admin
+  221  tsc --noEmit
+  222  d
+  223  s
+  224  git checkout -b "feature/VWA-3326_vinisto-plus-fixes-client_admin"
+  225  git add .
+  226  s
+  227  git commit -m "Apply fixes or improvements on client admin app" 
+  228  git upstream
+  229  s
+  230  git commit --amend
+  231  git push --force
+  232  s
+  233  ls
+  234  s
+  235  cd src
+  236  cd main
+  237  cd services
+  238  cd graph
+  239  ls
+  240  node index
+  241  ls
+  242  ts-node index.ts
+  243  s
+  244  cd ..
+  245  s
+  246  cd ..
+  247  s
+  248  git add .
+  249  git commit -m "WIP graph service"
+  250  s
+  251  git add .
+  252  git commit -m "Add component searching algorithm"
+  253  s
+  254  cd frontend/eshop
+  255  br
+  256  git switch feature/VWA-3268
+  257  git pull --rebase
+  258  s
+  259  d
+  260  git stash push
+  261  git switch feature/VWA-3268
+  262  git pull --rebase
+  263  git commit -m "Apply fixes or improvements on client admin app" 13[
+  264  br
+  265  git checkout -b feature/VWA-3335_vinisto-plus-fixes
+  266  git stash pop
+  267  s
+  268  cd frontend/eshop
+  269  pnpm dev
+  270  s
+  271  cd ..
+  272  s
+  273  git add .
+  274  git commit -m "Fix authenticvation issues"
+  275  git upstream
+  276  git pull --rebase
+  277  open /Applications/Google\ Chrome.app --args --user-data-dir="/var/tmp/Chrome dev session" --disable-web-security\n
+  278  sudo open /Applications/Google\ Chrome.app --args --user-data-dir="/var/tmp/Chrome dev session" --disable-web-security\n
+  279  open /Applications/Google\ Chrome.app --args --user-data-dir="/var/tmp/Chrome dev session" --disable-web-security\n
+  280  open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security
+  281  s
+  282  d
+  283  git br
+  284  git switch feature/VWA-3268
+  285  git pull --rebase
+  286  br
+  287  git switch feature/VWA-3326_vinisto-plus-fixes-2
+  288  git pull --rebase
+  289  s
+  290  git add .
+  291  git commit -m "Display vinisto plus price as discount in basket and order confirmation"
+  292  s
+  293  git push
+  294  pnpm dev
+  295  s
+  296  git stash push
+  297  br
+  298  git switch feature/VWA-3268
+  299  git pull --rebase
+  300  git checkout -b feature/VWA-3335_vinisto-plus-fixes
+  301  git checkout -b feature/VWA-3335_vinisto-plus-fixes-2
+  302  git stash pop
+  303  cd eshop
+  304  pnpm dev
+  305  s
+  306  git add .
+  307  git commit -m "Implement user updating feature on auth check, remove ad-hoc solutions for priceLevel"
+  308  s
+  309  git upstream
+  310  s
+  311  cd ..
+  312  git switch -
+  313  git pull --rebase
+  314  git checkout -b "feature/VWA-3329_vinisto-plus-as-discount-admin"
+  315  cd admin
+  316  pnpm start
+  317  s
+  318  cd ..
+  319  s
+  320  d
+  321  git add .
+  322  git commit -m "Show vinisto plus pseudo-discounts in admin order detail"
+  323  git upstream
+  324  s
+  325  git push
+  326  l
+  327  git log
+  328  yarn start
+  329  yarn dev
+  330  l
+  331  yarn dev
+  332  s
+  333  cd ..
+  334  s
+  335  git add .
+  336  s
+  337  git reset .
+  338  s
+  339  git add .
+  340  git commit -m "Add prefix to api\n\n"
+  341  s
+  342  git push
+  343  yarn dev
+  344  yarn add tanst tanstack-query
+  345  yarn add tanstack-query
+  346  yarn add tanstack-query --skip-integrity-check
+  347  yarn add tanstack-query --ignore-engines
+  348  yarn add @tanstack/react-query\n
+  349  yarn config set ignore-engines true
+  350  yarn add @tanstack/react-query\n
+  351  yarn remove tanstack-query
+  352  yarn dev
+  353  yarn rebuild
+  354  ./node_modules/.bin/electron-rebuild
+  355  yarn dev
+  356  $(npm bin)/electron-rebuild
+  357  ./node_modules/.bin/electron-rebuild
+  358  yarn run rebuild
+  359  npm run rebuild
+  360  electron-rebuild -f -w better_sqlite3
+  361  yarn install
+  362  yarn dev
+  363  yarn run postinstall
+  364  yarn dev
+  365  yarn run electron-rebuild -f -w better-sqlite3
+  366  yarn dev
+  367  yarn add @tanstack/router
+  368  yarn dev
+  369  yarn add @tanstack/react-router
+  370  yarn add -D @tanstack/react-router-devtools
+  371  yarn dev
+  372  s
+  373  git add .
+  374  git commit -m "Scaffold frontend WIP"
+  375  git push
+  376  yarn dev
+  377  yarn start
+  378  yarn add tailwindcss @tailwindcss/vite
+  379  yarn dev
+  380  s
+  381  git add .
+  382  git commit -m "Add tailwind css"
+  383  git push
+  384  s
+  385  clear
+  386  cd ..
+  387  cd eshop
+  388  git switch -
+  389  git pull --rebase
+  390  git checkout -b "feature/VWA-3334_improve-modal-behavior"
+  391  pnpm dev
+  392  s
+  393  git add .
+  394  git commit -m "Improve modal behavior"
+  395  s
+  396  git upstream
+  397  git switch develop
+  398  git pull --rebase
+  399  git switch feature/VWA-3268
+  400  git pull --rebase
+  401  git merge develop
+  402  git merge --abort
+  403  br
+  404  git switch feature/VWA-3334_improve-modal-behavior
+  405  s
+  406  git add .
+  407  git commit --amend
+  408  git push --force
+  409  git switch -
+  410  git pull --rebase
+  411  git merge develop
+  412  git merge --abort
+  413  git pull --rebase
+  414  git checkout -b "feature/VWA-3345_clent-admin-vinisto-plus"
+  415  cd ../client_admin
+  416  pnpm start
+  417  s
+  418  git add .
+  419  git commit -m "Update bussines logic according to new specs (wip)"
+  420  git commit --amend
+  421  git upstream
+  422  pnpm start
+  423  cd client_admin
+  424  pnpm gt
+  425  s
+  426  d
+  427  s
+  428  git add .
+  429  git commit -m "Complete up client admin update"
+  430  git push
+  431  git pull --rebase
+  432  git push
+  433  git pull --rebase
+  434  br
+  435  git switch feature/VWA-3268
+  436  git pull --rebase
+  437  cd ..
+  438  cd eshop
+  439  pnpm dev
+  440  s
+  441  git checkout -b feature/VWA-3334_vinisto-plus-modal-button
+  442  cd ..
+  443  s
+  444  git add .
+  445  git commit -m "Update button text and functionality"
+  446  git upstream
+  447  git switch develop
+  448  git pull --rebase
+  449  s
+  450  cd frontend/client_admin
+  451  pnpm start
+  452  s
+  453  git checkout -b "feature/VWA-3323_remove-dic-validation"
+  454  git add .
+  455  git commit -m "Remove DIČ validation altogether"
+  456  git upstream
+  457  git switch develop
+  458  git pull --rebase
+  459  br
+  460  git switch feature/VWA-3268
+  461  git pull --rebase
+  462  git checkout -b "feature/VWA-3348_client-admin-minor-fixes"
+  463  pnpm start
+  464  s
+  465  git add .
+  466  git commit -m "Apply minor fixes/improvements"
+  467  git upstream
+  468  s
+  469  git add .
+  470  git commit -m "Update translations"
+  471  git push
+  472  s
+  473  br
+  474  git switch feature/VWA-3268
+  475  git pull --rebase
+  476  git switch -
+  477  git rebase feature/VWA-3268
+  478  git rebase --abort
+  479  git rebase feature/VWA-3268
+  480  s
+  481  git push --force
+  482  cd frontend/client_admin
+  483  pnpm start
+  484  cd ..
+  485  cd eshop
+  486  pnpm dev
+  487  s
+  488  git stash push
+  489  git switch -
+  490  git pull --rebase
+  491  git checkout -b "feature/VWA-3327_coupons-update-price-benchmarking"
+  492  git stash pop
+  493  s
+  494  git add .
+  495  git commit -m "Change the way the benchmark () price is calculated
+  496  git commit -m "Change the way the benchmark ('base') price is calculated"
+  497  git upstream
+  498  br
+  499  git switch -
+  500  git pull --rebase
+  501  git switch feature/VWA-3323_remove-dic-validation
+  502  git rebase feature/VWA-3268
+  503  s
+  504  git push --force
+  505  git switch feature/VWA-3268
+  506  git pull --rebase
+  507  cd ..
+  508  cd client_admin
+  509  pnpm start
+  510  s
+  511  git checkout -b "feature/VWA-3349_price-deletion-fix"
+  512  git add . -p
+  513  s
+  514  git commit -m "Implement deleting base price with vinisto plus discount"
+  515  git upstream
+  516  s
+  517  git add .
+  518  s
+  519  git reset .
+  520  git checkout -b "feature/VWA-3328_extend-vplus-discout-info"
+  521  git add .
+  522  s
+  523  git commit -m "Extend vinisto plus discount info"
+  524  git upstream
+  525  open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security
+  526  cd ..
+  527  cd eshop
+  528  git br
+  529  git switch feature/VWA-3268
+  530  git pull --rebase
+  531  pnpm dev
+  532  cd frontend/eshop
+  533  tsc --noEmit
+  534  clear
+  535  tsc --noEmit
+  536  clear
+  537  tsc --noEmit
+  538  s
+  539  git checkout -b "feature/VWA-3350_repeated-payment"
+  540  git add .
+  541  git commit -m "Implement repeated payments for subscription orders, fix issues"
+  542  git upstream
+  543  s
+  544  git switch -
+  545  git pull --rebase
+  546  git checkout -b "feature/VWA-3353_dedupe-subscriber-deliveries"
+  547  s
+  548  git add .
+  549  git commit -m "Dedupe subscriber deliveries"
+  550  git upstream
+  551  tsc --noEmit
+  552  pnpm lint
+  553  s
+  554  git stash push
+  555  git br
+  556  git switch feature/VWA-3268
+  557  git pull --rebase
+  558  git checkout -b "feature/VWA-3362_vinisto-plus-consistent-casing"
+  559  s
+  560  git add .
+  561  git commit -m "Apply consistent casing for 'vinisto PLUS+'"
+  562  git upstream
+  563  git switch -
+  564  git pull --rebase
+  565  s
+  566  cd frontend/client_admin
+  567  pnpm start
+  568  cd ..
+  569  s
+  570  pnpm start
+  571  s
+  572  git checkout -b "feature/VWA-3354_dynamic-discount-options"
+  573  git add .
+  574  git commit -m "Make discount options fully dynamic, fix non-existing 'cz' locale"
+  575  git upstream
+  576  git switch develop
+  577  git pull --rebase
+  578  git checkout -b "feature/VWA-3229_do-not-show-inactive"
+  579  cd frontend/admin
+  580  tsc --noEmit
+  581  pnpm start
+  582  d
+  583  s
+  584  git add .
+  585  git diff --cached
+  586  git commit -m "Do not list deleted bundles by default"
+  587  git upstream
+  588  cd Dev
+  589  ls
+  590  cd docker-compose-lamp 
+  591  docker-compose up
+  592  s
+  593  git add .
+  594  git commit -m "Fix hover color of active nav link"
+  595  git push
+  596  git checkout -b "clean-architecture"
+  597  s
+  598  git switch develop
+  599  s
+  600  cd frontend/eshop
+  601  pnpm dev
+  602  s
+  603  git checkout -b "feature/VWA-3228_hardcoded-prices"
+  604  git add .
+  605  git commit -m "Add hardcoded prices"
+  606  cd ..
+  607  git commit -m "Add hardcoded prices"
+  608  s
+  609  git add.
+  610  git commit -m "Add hardcoded prices"
+  611  s
+  612  git add . 
+  613  git commit -m "Add hardcoded prices"
+  614  s
+  615  git br
+  616  git upstream
+  617  s
+  618  git add .
+  619  git commit -m "Clean up"
+  620  git push
+  621  git pull --rebase
+  622  git push
+  623  git rebase -i 910124ed9a4c2fb7c93353cdc4c5706c399c0439
+  624  git push --force
+  625  git rebase -i 910124ed9a4c2fb7c93353cdc4c5706c399c0439~
+  626  git push --force
+  627  git switch develop
+  628  git pull --rebase
+  629  git fetch origin feature/VWA-3357-garance
+  630  git switch feature/VWA-3357-garance
+  631  git pull //rebase
+  632  git pull --rebase
+  633  s
+  634  git checkout -b "feature/VWA-3379_price-guarantee-bundle-info"
+  635  s
+  636  git add .
+  637  s
+  638  git add .
+  639  s
+  640  pnpm dev
+  641  s
+  642  git add .
+  643  git commit -m "Implement bundle info component"
+  644  git upstream
+  645  br
+  646  git br
+  647  git switch feature/VWA-3357-garance
+  648  git pull --rebase
+  649  cd frontend/eshop
+  650  pnpm dev
+  651  s
+  652  git stash push
+  653  git checkout -b "feature/VWA-3379_price-guarantee-cta-handler"
+  654  git stash pop
+  655  git add .
+  656  s
+  657  git commit -m "Refine 'add to basket' handler"
+  658  git upstream
+  659  php
+  660  php -a
+  661  br
+  662  git switch develop
+  663  git pull --rebase
+  664  br
+  665  git switch feature/VWA-3268
+  666  git pull --rebase
+  667  git merge develop
+  668  git push
+  669  git switch develop
+  670  git fetch origin feature/VWA-3255-new
+  671  git switch feature/VWA-3255-new
+  672  git pull --rebase
+  673  cd frontend/packages/vinisto-api-client
+  674  pnpm gt https://vwa-3255-new.vinisto.dev
+  675  s
+  676  cd ..
+  677  s
+  678  cd eshop
+  679  tsc --noEmit
+  680  git checkout HEAD .
+  681  s
+  682  git checkout HEAD~ .
+  683  s
+  684  cd ..
+  685  s
+  686  git checkout -HEAD .
+  687  git checkout HEAD .
+  688  s
+  689  git switch develop
+  690  cd admin
+  691  pnpm start
+  692  s
+  693  git checkout -b "feature/VWA-3380_deleted-bundles-listing"
+  694  git add .
+  695  git commit -m 'Add default query param, comment out unused code'
+  696  git upstream
+  697  git switch -
+  698  git rebase develop
+  699  git switch -
+  700  git pull --rebase
+  701  git switch -
+  702  git rebase develop
+  703  s
+  704  git push --force
+  705  git switch develop
+  706  git pull --rebase
+  707  s
+  708  git checkout b0a4ae078efa3b619ccec328b91f8ad6ae28b16e
+  709  git checkout 46902e413ea4945fae6ce4f5971919591f4dd618
+  710  git checkout HEAD
+  711  git checkout develop
+  712  s
+  713  git pull --rebase
+  714  git checkout -b "feature/VWA-3380_deleted-bundles-listing-fix"
+  715  cd frontend/admin
+  716  pnpm start
+  717  s
+  718  git add .
+  719  git commit -m "Fix 'isDeleted' request param naming"
+  720  git upstream
+  721  git switch develop
+  722  git pull --rebase
+  723  git fetch origin feature/ecomail-forgotten-cart
+  724  gti switch feature/ecomail-forgotten-cart
+  725  git switch feature/ecomail-forgotten-cart
+  726  git rebase develop
+  727  s
+  728  git push --force
+  729  cd frontend/eshop
+  730  pnpm dev
+  731  s
+  732  cd ..
+  733  s
+  734  git add . -p
+  735  s
+  736  git commit -m "Update handler"
+  737  git stash push --include-untracked
+  738  s
+  739  git push
+  740  s
+  741  git add .
+  742  git commit -m "Fix missing VAT in price"
+  743  git push
+  744  git switch develop
+  745  git pull --rebase
+  746  git switch -
+  747  git switch develop
+  748  s
+  749  git checkout -b "bugfix/VWA-3363_missing-deliveries-for-subscribers"
+  750  git add .
+  751  git commit -m "Fix missing deliveries"
+  752  git upstream
+  753  s
+  754  git add .
+  755  git commit -m "Remove comment with typo and low value"
+  756  git push
+  757  git pull --rebase
+  758  git push
+  759  s
+  760  git add .
+  761  git commit -m "Put vinistoPlus deliveries on top"
+  762  git pull --rebase
+  763  git push
+  764  git switch develop
+  765  git pull --rebase
+  766  s
+  767  git add .
+  768  git commit -m "Remove debug value"
+  769  git push
+  770  s
+  771  git add .
+  772  git commit -m "WIP"
+  773  git push
+  774  cd frontend/eshop
+  775  pnpm dev
+  776  git checkout -b "feature/VWA-3382_luigisbox-ga-event"
+  777  git add .
+  778  s
+  779  git commit -m "Implement analytics for luigisbox item views"
+  780  git upstream
+  781  git pull --rebase
+  782  s
+  783  d
+  784  git stash push
+  785  git switch develop
+  786  git pull --rebase
+  787  git checkout -b "feature/VWA-3385_user-price-level-to-params"
+  788  git stash pop
+  789  s
+  790  git add .
+  791  git commit -m "Create mapper from priceLevel enum to priceLevel number"
+  792  git upstream
+  793  s
+  794  git add .
+  795  git commit -m "Use actual users price level"
+  796  git push
+  797  s
+  798  git add .
+  799  git commit -m "Implement proper login"
+  800  git switch develop 
+  801  git pull --rebase
+  802  git checkout -b "feature/VWA-3384_admin-specifications-bugs"
+  803  cd frontend/admin
+  804  pnpm start
+  805  git switch develop
+  806  git pull --rebase
+  807  cd ..
+  808  cd eshop
+  809  pnpm dev
+  810  s
+  811  git checkout -b "feature/VWA-0000_vinisto-plus-agreement-checkbox"
+  812  git add .
+  813  git commit -m "Implement checkbox field"
+  814  git upstream
+  815  s
+  816  git switch develop
+  817  git pull --rebase
+  818  cd ..
+  819  cd admin
+  820  pnpm start
+  821  s
+  822  git stash push
+  823  git fetch origin feature/VWA-3332-specifications
+  824  git switch feature/VWA-3332-specifications
+  825  git stash pop
+  826  s
+  827  git reset .
+  828  s
+  829  git checkout -b "feature/VWA-3384_specification-extension-fixes"
+  830  git add .
+  831  git commit -m "Implement missing refetch"
+  832  s
+  833  git add .
+  834  git commit -m "Add error handling"
+  835  pnpm start
+  836  s
+  837  git add .
+  838  git commit -m "Fix form issues"
+  839  git upstream
+  840  s
+  841  gti add .
+  842  git commit -m "Implement create method"
+  843  git add .
+  844  git commit -m "Implement create method"
+  845  s
+  846  git switch develop
+  847  git pull --rebase
+  848  git br
+  849  git checkout -b 'feature/VWA-0000_admin-supscriptions'
+  850  s
+  851  pnpm start
+  852  s
+  853  pnpm start
+  854  d
+  855  s
+  856  git add .
+  857  git commit -m "Subscriptions list (WIP)"
+  858  git br
+  859  git branch -M feature/VWA-3387_admin-subscriptions
+  860  git upstream
+  861  git pull --rebase
+  862  br
+  863  s
+  864  git switch feature/VWA-0000_vinisto-plus-agreement-checkbox
+  865  git pull --rebase
+  866  cd frontend/eshop
+  867  pnpm dev
+  868  s
+  869  git add .
+  870  git commit -m "Apply styles to checkbox, fix labels not being attached"
+  871  git push
+  872  s
+  873  br
+  874  git switch feature/VWA-3387_admin-subscriptions
+  875  git pull --rebase
+  876  br
+  877  cd ..
+  878  cd admin
+  879  pnpm start
+  880  s
+  881  git add .
+  882  git commit -m "Implement States filter"
+  883  git push
+  884  git switch develop
+  885  git pull --rebase
+  886  git checkout -b "feature/VWA-3356_client-admin-coupons"
+  887  cd ..
+  888  cd client_admin
+  889  pnpm start
+  890  s
+  891  git add .
+  892  git commit -m 
+  893  git commit -m "Update note, improve styling, set isForDiscounted.. to false"
+  894  git upstream
+  895  s
+  896  git add .
+  897  git commit -m "Set isForDiscountedItems conditionaly"
+  898  git push
+  899  s
+  900  br
+  901  git switch feature/VWA-3387_admin-subscriptions
+  902  git pull --rebase
+  903  pnpm start
+  904  cd admin
+  905  cd frontend/admin
+  906  pnpm start
+  907  br
+  908  git switch feature/VWA-3356_client-admin-coupons
+  909  git pull --rebase
+  910  cd ..
+  911  cd client_admin
+  912  pnpm start
+  913  git switch develop
+  914  git switch -
+  915  git pull --rebase
+  916  git switch develop
+  917  git pull --rebase
+  918  br
+  919  git switch feature/VWA-3387_admin-subscriptions
+  920  git pull --rebase
+  921  cd ..
+  922  cd admin
+  923  pnpm start
+  924  s
+  925  git add .
+  926  git commit -m "Finish admin subscriptions MVP"
+  927  s
+  928  git add ,
+  929  git add .
+  930  git commit -m "Apply translation"
+  931  git push
+  932  git switch develop
+  933  git pull --rebase
+  934  git pull checkout -b "feature/VWA-3403_admin-sellers-id-column"
+  935  git checkout -b "feature/VWA-3403_admin-sellers-id-column"
+  936  s
+  937  git add .
+  938  git commit -m "Add 'id' column (hidden by default)"
+  939  git upstream
+  940  s
+  941  git switch develop
+  942  git pull --rebase
+  943  s
+  944  cd frontend/admin
+  945  pnpm start
+  946  s
+  947  git checkout -b "feature/VWA-3401_virtual-categories-admin"
+  948  git add .
+  949  s
+  950  git commit -m "Create scaffolding for admin virtual categories"
+  951  git upstream
+  952  git switch develop
+  953  git pull --rebase
+  954  git checkout -b "feature/VWA-3365_virtual-categories-feature-branch"
+  955  git upstream
+  956  git switch develop
+  957  git pull --rebase
+  958  cd frontend
+  959  cd ..
+  960  cd eshop
+  961  tsc --noEmit
+  962  pnpm dev
+  963  s
+  964  git checkout -b "bugfix/VWA-0000_checkbox-apply-different-names"
+  965  git add .
+  966  s
+  967  d
+  968  git diff --cahced
+  969  git diff --cached
+  970  s
+  971  git add .
+  972  git commit -m "Apply different name for each input"
+  973  git upstream
+  974  s
+  975  git add .
+  976  git commit -m "Apply final touches"
+  977  s
+  978  git add .
+  979  git commit -m "Apply final touches"
+  980  s
+  981  br
+  982  git switch feature/VWA-3365_virtual-categories-feature-branch
+  983  git pull --rebase
+  984  git switch develop
+  985  git pull --rebase
+  986  s
+  987  d
+  988  git checkout -b feature/copy-typegen-script-to-all-apps
+  989  git add .
+  990  git commit -m "Copy typegen script to all apps [no-verify]"
+  991  git upstream
+  992  br
+  993  git switch feature/VWA-3365_virtual-categories-feature-branch
+  994  cd frontend/packages/vinisto-api-client
+  995  pnpm gt
+  996  s
+  997  cd frontend/admin
+  998  pnpm start
+  999  cd frontend/admin
+ 1000  pnpm start
+ 1001  ls
+ 1002  dotnet Contralto.dll
+ 1003  s
+ 1004  git add .
+ 1005  git commit -m "Implement CRUD action (wip)"
+ 1006  s
+ 1007  git checkout -b javascript
+ 1008  git add .
+ 1009  git commit -m "Implement js workflows"
+ 1010  s
+ 1011  br
+ 1012  git reset --soft HEAD~
+ 1013  s
+ 1014  git reset .
+ 1015  git checkout -b "feature/VWA-3401_virtual-catregories-admin"
+ 1016  git add .
+ 1017  s
+ 1018  git commit -m "Implement basic modals"
+ 1019  git upstream
+ 1020  git br
+ 1021  git switch feature/VWA-3365_virtual-categories-feature-branch
+ 1022  git pull --rebase
+ 1023  cd frontend/admin
+ 1024  pnpm start
+ 1025  br
+ 1026  git pull --rebase
+ 1027  git checkout -b "feature/VWA-3401_virtual-catregories-admin_crud"
+ 1028  pnpm gt
+ 1029  cd frontend/admin
+ 1030  pnpm gt
+ 1031  d
+ 1032  git add .
+ 1033  git commit -m "Update types"
+ 1034  cd ..
+ 1035  s
+ 1036  git add .
+ 1037  git commit -m "Update types"
+ 1038  s
+ 1039  git upstream
+ 1040  s
+ 1041  git add .
+ 1042  git commit -m "Implement CRUD operations"
+ 1043  git upstream
+ 1044  s
+ 1045  git add .
+ 1046  git commit -m "Fix parameters mismatch"
+ 1047  git push
+ 1048  git pull --rebase
+ 1049  br
+ 1050  git switch feature/VWA-3365_virtual-categories-feature-branch
+ 1051  git pull --rebase
+ 1052  cd admin
+ 1053  pnpm gt
+ 1054  s
+ 1055  cd ..
+ 1056  s
+ 1057  git checkout -b "feature/VWA-3401_virtual-catregories-admin_filtering"
+ 1058  s
+ 1059  git add .
+ 1060  git commit -m "Update and fix types"
+ 1061  s
+ 1062  git add .
+ 1063  git commit -m "Implement filters and sorting, fix some minor issues"
+ 1064  git upstream
+ 1065  s
+ 1066  d
+ 1067  git br
+ 1068  git checkout -b "feature/VWA-3401_virtual-catregories-admin_polishing"
+ 1069  s
+ 1070  git add .
+ 1071  git commit -m "Fix limit, improve state column"
+ 1072  s
+ 1073  git upstream
+ 1074  s
+ 1075  br
+ 1076  git switch feature/VWA-3365_virtual-categories-feature-branch
+ 1077  git pull --rebase
+ 1078  git switch -
+ 1079  git rebase feature/VWA-3365_virtual-categories-feature-branch
+ 1080  s
+ 1081  git push --force
+ 1082  pnpm start
+ 1083  git br
+ 1084  git switch feature/VWA-3255-new
+ 1085  git pull --rebase
+ 1086  git switch develop
+ 1087  git pull --rebase
+ 1088  git switch -
+ 1089  git merge develop
+ 1090  git push
+ 1091  git checkout -b "feature/VWA-3415_apply-default-api-keys"
+ 1092  cd frontend/eshop
+ 1093  pnpm dev
+ 1094  cd frontend/admin
+ 1095  pnpm start
+ 1096  s
+ 1097  cd ..
+ 1098  s
+ 1099  git add .
+ 1100  git commit -m "Apply first batch of changes"
+ 1101  s
+ 1102  git push
+ 1103  git upstream
+ 1104  cd eshop
+ 1105  pnpm gt
+ 1106  clear
+ 1107  pnpm gt
+ 1108  s
+ 1109  cd ..
+ 1110  s
+ 1111  git add .
+ 1112  git commit -m "Update types"
+ 1113  d
+ 1114  s
+ 1115  d
+ 1116  s
+ 1117  git add .
+ 1118  git commit -m "Update requests (eshop, wip)"
+ 1119  git push
+ 1120  s
+ 1121  br
+ 1122  git switch feature/VWA-3401_virtual-catregories-admin
+ 1123  git pull --rebase
+ 1124  git pull
+ 1125  git switch develop
+ 1126  br
+ 1127  git switch feature/VWA-3365_virtual-categories-feature-branch
+ 1128  git pull --rebase
+ 1129  cd frontend/admin
+ 1130  pnpm start
+ 1131  s
+ 1132  br
+ 1133  git checkout -b feature/VWA-3401_virtual-catregories-admin_validate-url
+ 1134  git add .
+ 1135  s
+ 1136  git commit -m "Implement relative url validation"
+ 1137  git upstream
+ 1138  br
+ 1139  git switch feature/VWA-3415_apply-default-api-keys
+ 1140  git pull --rebase
+ 1141  cd ..
+ 1142  cd eshop
+ 1143  tsc --noEmit
+ 1144  clear
+ 1145  tsc --noEmit
+ 1146  clear
+ 1147  tsc --noEmit
+ 1148  clear
+ 1149  tsc --noEmit
+ 1150  s
+ 1151  cd ..
+ 1152  git add .
+ 1153  git commit -m "Fix type errors (eshop)"
+ 1154  git push
+ 1155  cd frontend
+ 1156  cd eshop
+ 1157  pnpm dev
+ 1158  s
+ 1159  git switch develop
+ 1160  git pull --rebase
+ 1161  s
+ 1162  git checkout -b "bugfix/VWA-0000_fix-wrong-pricelevel-enum-values"
+ 1163  git add .
+ 1164  s
+ 1165  git commit -m "Fix erroneous enum values"
+ 1166  git upstream
+ 1167  br
+ 1168  git switch feature/VWA-3415_apply-default-api-keys
+ 1169  pnpm start
+ 1170  pnpm dev
+ 1171  s
+ 1172  gcc edit.c -o edit
+ 1173  ./edit
+ 1174  gcc edit.c -o edit
+ 1175  ./edit
+ 1176  gcc edit.c -o edit
+ 1177  ./edit
+ 1178  gcc edit.c -o edit
+ 1179  ./edit
+ 1180  gcc edit.c -o edit
+ 1181  ./edit
+ 1182  gcc edit.c -o edit
+ 1183  clear
+ 1184  gcc edit.c -o edit
+ 1185  gcc edit.c pgma_io.c -o edit
+ 1186  gcc edit.c pgma_io.c -o edit -Wall
+ 1187  ./edit
+ 1188  tar -xzf netpbm.tgz
+ 1189  gcc edit.c pgma_io.c -o edit -Wall
+ 1190  ./edit
+ 1191  gcc edit.c pgma_io.c -o edit -Wall
+ 1192  ./edit
+ 1193  gcc edit.c pgma_io.c -o edit -Wall
+ 1194  ./edit
+ 1195  gcc edit.c pgma_io.c -o edit -Wall
+ 1196  ./edit
+ 1197  gcc edit.c pgma_io.c -o edit -Wall
+ 1198  ./edit
+ 1199  clear
+ 1200  gcc edit.c pgma_io.c -o edit -Wall
+ 1201  ./edit
+ 1202  s
+ 1203  git add .
+ 1204  git log
+ 1205  git add .
+ 1206  s
+ 1207  git commit -m "Implement assignment 3"
+ 1208  gcc edit.c pgma_io.c -o edit -Wall
+ 1209  ./edit
+ 1210  gcc edit.c pgma_io.c -o edit -Wall
+ 1211  ./edit
+ 1212  s
+ 1213  git add .
+ 1214  git commit -m "Implement all remaining functions"
+ 1215  gcc edit.c pgma_io.c -o edit
+ 1216  s
+ 1217  git br
+ 1218  git log --graph --decorate
+ 1219  git switch develop
+ 1220  git pull --rebase
+ 1221  git switch feature/VWA-3255-new
+ 1222  git pull --rebase
+ 1223  git merge develop
+ 1224  git merge --abort
+ 1225  br
+ 1226  git switch feature/VWA-3415_apply-default-api-keys
+ 1227  git pull --rebase
+ 1228  cd ..
+ 1229  cd admin
+ 1230  tsc --noemit
+ 1231  tsc --noEmit
+ 1232  pnpm gt
+ 1233  s
+ 1234  clear
+ 1235  tsc --noEmit
+ 1236  d
+ 1237  tsc --noEmit
+ 1238  s
+ 1239  pnpm start
+ 1240  clear
+ 1241  cd frontend/admin
+ 1242  tsc --noEmit
+ 1243  s
+ 1244  cd ..
+ 1245  tsc --noEmit
+ 1246  cd -
+ 1247  tsc --noEmit
+ 1248  cd ..
+ 1249  git add .
+ 1250  git commit -m "Fix all type errors (admin)"
+ 1251  s
+ 1252  git push
+ 1253  git pull --rebase
+ 1254  l
+ 1255  yarn dev
+ 1256  yarn add react-aria-componments
+ 1257  yarn add react-aria-components\n
+ 1258  yarn add react-hook-form
+ 1259  yarn dev
+ 1260  yarn add -D tailwindcss-animate tailwindcss-react-aria-components
+ 1261  yarn add tailwind-variants
+ 1262  yarn dev
+ 1263  yarn add tailwind-merge
+ 1264  yarn dev
+ 1265  yarn add final-form final-form-react
+ 1266  yarn add final-form react-final-form\n
+ 1267  git add .
+ 1268  git commit -m "WIP"
+ 1269  yarn dev
+ 1270  yarn shadcn@latest init\n~
+ 1271  cd -
+ 1272  yarn shadcn@latest init\n
+ 1273  Yarn add shadcn@latest
+ 1274  yarn shadcn@latest init
+ 1275  yarn shadcn init
+ 1276  yarn add class-variance-authority clsx tailwind-merge lucide-react tw-animate-css\n
+ 1277  yarn shadcn add button
+ 1278  s
+ 1279  yarn shadcn add form
+ 1280  yarn shadcn add input
+ 1281  yarn dev
+ 1282  yarn add @heroicons/react
+ 1283  yarn dev
+ 1284  yarn add @heroicons/react
+ 1285  pnpm dev
+ 1286  s
+ 1287  git pull --rebase
+ 1288  br
+ 1289  cd frontend/client_admin
+ 1290  clear
+ 1291  tsc --noEmit
+ 1292  d
+ 1293  tsc --noEmit
+ 1294  clear
+ 1295  tsc --noEmit
+ 1296  clear
+ 1297  tsc --noEmit
+ 1298  pnpm start
+ 1299  tsc --noEmit
+ 1300  s
+ 1301  tsc --noEmit
+ 1302  s
+ 1303  git add .
+ 1304  git commit -m "Fix type errors (client_admin)"
+ 1305  git push
+ 1306  yarn dev
+ 1307  yarn build:mac\\n
+ 1308  yarn build:mac\n
+ 1309  yarn start
+ 1310  yarn build:mac\n
+ 1311  s
+ 1312  git add .
+ 1313  git commit -m "Implement projects crud mvp"
+ 1314  git push
+ 1315  yarn add -D prettier-eslint
+ 1316  yarn dev
+ 1317  lsof -i tcp:4321
+ 1318  yarn dev
+ 1319  lsof -i tcp:4321
+ 1320  yarn dev
+ 1321  s
+ 1322  git add .
+ 1323  git commit -m "Replace 'startsWith' expressions (client_admin)"
+ 1324  git push
+ 1325  s
+ 1326  git add .
+ 1327  git commit -m "Replace 'startsWith' expressions (admin)"
+ 1328  git push
+ 1329  s
+ 1330  d
+ 1331  git add .
+ 1332  git commit -m "Temporarily disable price select filter"
+ 1333  git push
+ 1334  cd adm
+ 1335  cd admin
+ 1336  cd frontend/admin
+ 1337  tsc --noEmit
+ 1338  s
+ 1339  git add .
+ 1340  git commit --amend
+ 1341  git push --force
+ 1342  cd ..
+ 1343  cd advisor
+ 1344  tsc --noEmit
+ 1345  pnpm start
+ 1346  s
+ 1347  pnpm start
+ 1348  pnpm starts
+ 1349  s
+ 1350  d
+ 1351  s
+ 1352  cd ..
+ 1353  cd admin
+ 1354  git switch feature/VWA-3255-new
+ 1355  git pull --rebase
+ 1356  git switch -
+ 1357  git rebase feature/VWA-3255-new
+ 1358  s
+ 1359  git push --force
+ 1360  pnpm start
+ 1361  open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security
+ 1362  s
+ 1363  git add .
+ 1364  git reset .
+ 1365  s
+ 1366  git add .
+ 1367  git commit -m "Fix price table"
+ 1368  git push
+ 1369  s
+ 1370  git add .
+ 1371  git reset .
+ 1372  s
+ 1373  d
+ 1374  s
+ 1375  git add .
+ 1376  s
+ 1377  git add .
+ 1378  git commit -m "Add platform select, add vinisto plus option to level select"
+ 1379  git push
+ 1380  s
+ 1381  git add .
+ 1382  git commit -m "Fix platform labels"
+ 1383  git push
+ 1384  s
+ 1385  git add .
+ 1386  git commit -m "Fix price crud"
+ 1387  git push
+ 1388  s
+ 1389  git switch develop
+ 1390  d
+ 1391  cd ..
+ 1392  cd advisor
+ 1393  pnpm start
+ 1394  tsc --noEmit
+ 1395  s
+ 1396  cd ..
+ 1397  git checkout -b "feature/VWA-3423_add-price-level-to-request"
+ 1398  s
+ 1399  git add .
+ 1400  git commit -m "Fix Advisor (temporarily) by adding price level to requests"
+ 1401  git upstream
+ 1402  s
+ 1403  br
+ 1404  git switch feature/VWA-3415_apply-default-api-keys
+ 1405  git pull --rebase
+ 1406  s
+ 1407  clear
+ 1408  cd frontend/admin
+ 1409  pnpm start
+ 1410  s
+ 1411  git stash push
+ 1412  git fetch origin feature/VWA-3412-zo-0
+ 1413  git pull --rebase
+ 1414  cd eshop
+ 1415  pnpm dev
+ 1416  s
+ 1417  br
+ 1418  s
+ 1419  git switch feature/VWA-3412-zo-0
+ 1420  s
+ 1421  git pull --reabse
+ 1422  git pull --rebase
+ 1423  s
+ 1424  pnpm dev
+ 1425  s
+ 1426  br
+ 1427  git switch feature/VWA-3415_apply-default-api-keys
+ 1428  git stash pop
+ 1429  cd ..
+ 1430  cd admin
+ 1431  pnpm start
+ 1432  s
+ 1433  git add .
+ 1434  git commit -m "Fix selling rules"
+ 1435  git push
+ 1436  s
+ 1437  git stash push
+ 1438  s
+ 1439  git add .
+ 1440  git commit -m "Move b2clevel1 price to its own regardless of the discount"
+ 1441  git push
+ 1442  git switch develop
+ 1443  git pull --rebase
+ 1444  git br
+ 1445  git switch feature/VWA-3255-new
+ 1446  git pull --rebase
+ 1447  git merge develop
+ 1448  git push
+ 1449  git br
+ 1450  git switch feature/VWA-3415_apply-default-api-keys
+ 1451  git rebase feature/VWA-3255-new
+ 1452  s
+ 1453  git push --force
+ 1454  pnpm gt
+ 1455  git add .
+ 1456  git commit -m "Update types" 
+ 1457  cd ..
+ 1458  s
+ 1459  git add .
+ 1460  git commit -m "Update types" 
+ 1461  s
+ 1462  git push
+ 1463  s
+ 1464  git add .
+ 1465  git commit -m "Update client_admin (wip)"
+ 1466  git push
+ 1467  br
+ 1468  git switch develop
+ 1469  git pull --rebase
+ 1470  git switch feature/VWA-3255-new
+ 1471  git pull --rebase
+ 1472  git merge develop
+ 1473  git push
+ 1474  git br
+ 1475  git switch feature/VWA-3415_apply-default-api-keys
+ 1476  git rebase feature/VWA-3255-new
+ 1477  git push --force
+ 1478  cd frontend/client_admin
+ 1479  pnpm start
+ 1480  s
+ 1481  git pull --rebase
+ 1482  s
+ 1483  git add .
+ 1484  git commit -m "Add features to IntegrationService (client_admin)"
+ 1485  s
+ 1486  git pull --rebase
+ 1487  git push
+ 1488  git add .
+ 1489  git commit -m "Implement javascript assignmanet"
+ 1490  s
+ 1491  git branch -D develop
+ 1492  git fetch origin/devalop
+ 1493  git fetch origin/develop
+ 1494  git fetch origin develop
+ 1495  s
+ 1496  pnpm start
+ 1497  s
+ 1498  git add .
+ 1499  git commit -m "Apply some fixes in client_admin"
+ 1500  git push
+ 1501  git br
+ 1502  git switch develop
+ 1503  git pull --rebase
+ 1504  s
+ 1505  git br
+ 1506  git switch feature/VWA-3255-new
+ 1507  git pull --rebase
+ 1508  git merge develop
+ 1509  git push
+ 1510  br
+ 1511  git switch feature/VWA-3415_apply-default-api-keys
+ 1512  git rebase feature/VWA-3255-new
+ 1513  git push --force
+ 1514  cd frontend/client_admin
+ 1515  tsc --noEmit
+ 1516  s
+ 1517  git diff  src/Services/LocalizationService/translations/cs.json
+ 1518  s
+ 1519  git add .
+ 1520  git commit -m "Fix misc fullfilment-related issues (mainly client_admin)"
+ 1521  s
+ 1522  cd ..
+ 1523  git add .
+ 1524  git commit --amend
+ 1525  git push
+ 1526  git switch develop
+ 1527  git checkout -b "bugfix/VWA-3436_virtual-categories-delete-fix"
+ 1528  cd ../admin
+ 1529  pnpm start
+ 1530  s
+ 1531  git add .
+ 1532  git commit -m "Fix deletion parameters"
+ 1533  git upstream
+ 1534  git switch -
+ 1535  s
+ 1536  br
+ 1537  git switch feature/VWA-3415_apply-default-api-keys
+ 1538  git pull --rebase
+ 1539  cd ../client_admin
+ 1540  pnpm start
+ 1541  cd client_admin
+ 1542  pnpm gt https://vwa-3255-new.vinisto.dev
+ 1543  s
+ 1544  cd ..
+ 1545  s
+ 1546  cd -
+ 1547  s
+ 1548  cd frontend/client_admin
+ 1549  s
+ 1550  git add .
+ 1551  git diff --cached
+ 1552  s
+ 1553  git commit -m "Fix some fee display issues"
+ 1554  git push
+ 1555  cd ..
+ 1556  s
+ 1557  git add .
+ 1558  git commit -m "Update types"
+ 1559  git push
+ 1560  git br
+ 1561  git switch feature/VWA-3255-new
+ 1562  git pull --rebase
+ 1563  s
+ 1564  git pull --rebase
+ 1565  git switch develop
+ 1566  git pull --rebase
+ 1567  git switch -
+ 1568  git merge develop
+ 1569  git merge --abort
+ 1570  br
+ 1571  git switch feature/VWA-3415_apply-default-api-keys
+ 1572  cd frontend/client_admin
+ 1573  pnpm start
+ 1574  s
+ 1575  git add .
+ 1576  git commit -m "Fix some price edit and stale data issues" 
+ 1577  git push
+ 1578  s
+ 1579  cd ..
+ 1580  cd admin
+ 1581  pnpm start
+ 1582  s
+ 1583  cd admin
+ 1584  tsc --noEmit
+ 1585  s
+ 1586  pnpm start
+ 1587  s
+ 1588  git diff
+ 1589  git add .
+ 1590  git commit -m "Apply some fixes or improvements (admin)"
+ 1591  git push
+ 1592  tsc --noEmit
+ 1593  s
+ 1594  git add .
+ 1595  git commit -m "Fix discount adding form (admin)"
+ 1596  git push
+ 1597  d
+ 1598  git add .
+ 1599  git commit -m "Fix some issues regarding price forms (admin)'\n"
+ 1600  git commit --amend
+ 1601  git push
+ 1602  s
+ 1603  git add .
+ 1604  git commit -m "Fix levels not being displayed properly in price table"
+ 1605  git push
+ 1606  s
+ 1607  d
+ 1608  tsc --noEmit
+ 1609  git add .
+ 1610  git commit -m "Fix commission forms"
+ 1611  git push
+ 1612  s
+ 1613  git commit --amend
+ 1614  git push --force
+ 1615  s
+ 1616  d
+ 1617  git add .
+ 1618  git comit --amend
+ 1619  git commit --amend
+ 1620  git push --force
+ 1621  cd ..
+ 1622  cd client_admin
+ 1623  pnpm start
+ 1624  s
+ 1625  git add .
+ 1626  git stash push
+ 1627  git switch develop
+ 1628  git stash pop
+ 1629  git checkout -b "feature/VWA-0000_minor-client-admin-fixes"
+ 1630  s
+ 1631  git add .
+ 1632  s
+ 1633  git commit -m "Fix set edit button appearance"
+ 1634  git upstream
+ 1635  git switch develop
+ 1636  git pull --rebase
+ 1637  cd ..
+ 1638  cd admin
+ 1639  pnpm start
+ 1640  s
+ 1641  git checkout -b "feature/VWA-3443_display-and-filter-by-subscriber-emails"
+ 1642  git add .
+ 1643  git commit -m "Implement subscriber email column with filtering"
+ 1644  git upstream
+ 1645  s
+ 1646  git br
+ 1647  git switch feature/VWA-0000_minor-client-admin-fixes
+ 1648  git pull --rebase
+ 1649  cd ..
+ 1650  s
+ 1651  cd client_admin
+ 1652  pnpm start
+ 1653  s
+ 1654  git add .
+ 1655  git commit -m "Add missing translations"
+ 1656  git push
+ 1657  git br
+ 1658  git switch feature/VWA-3255-new
+ 1659  git pull --rebase
+ 1660  git checkout -b "feature/VWA-3420_vinisto-plus-set-prices"
+ 1661  cd ..
+ 1662  cd admin
+ 1663  pnpm start
+ 1664  s
+ 1665  git stash push
+ 1666  git br
+ 1667  git switch feature/VWA-3255-new
+ 1668  git pull --rebase
+ 1669  d
+ 1670  s
+ 1671  git add .
+ 1672  git commit -m "Create platformId check helpers'
+ 1673  git commit -m "Create platformId check helpers"
+ 1674  git push
+ 1675  s
+ 1676  br
+ 1677  git switch feature/VWA-3420_vinisto-plus-set-prices
+ 1678  git pull --rebase
+ 1679  git stash pop
+ 1680  d
+ 1681  s
+ 1682  git add .
+ 1683  git commit -m "Fix some minor issues"
+ 1684  git upstream
+ 1685  git pull --rebase
+ 1686  tsc --noEmit
+ 1687  s
+ 1688  d
+ 1689  s
+ 1690  cd api
+ 1691  cd //
+ 1692  cd -
+ 1693  cd ..
+ 1694  cd frontend/admin
+ 1695  tsc --noEmit
+ 1696  s
+ 1697  git add .
+ 1698  git commit -m "Refactor set forms (wip)"
+ 1699  git push
+ 1700  s
+ 1701  git switch develop
+ 1702  git pull --rebase
+ 1703  git switch -
+ 1704  git rebase develop
+ 1705  git rebase --abort
+ 1706  git merge develop
+ 1707  git merge --abort
+ 1708  git rebase develop
+ 1709  git rebase --abort
+ 1710  s
+ 1711  git rebase -i 85b024dfa0f5f980c761399c4108ff7e0ff3b2c8~
+ 1712  git rebase --abort
+ 1713  git rebase -i 85b024dfa0f5f980c761399c4108ff7e0ff3b2c8~~
+ 1714  git rebase --abort
+ 1715  git rebase -i 85b024dfa0f5f980c761399c4108ff7e0ff3b2c8
+ 1716  git rebase --abort
+ 1717  git rebase -i 85b024dfa0f5f980c761399c4108ff7e0ff3b2c8^
+ 1718  s
+ 1719  git rebase --abort
+ 1720  git switch develop
+ 1721  git checkout -b "feature/VWA-3240_vinisto-plus-sets-fe"
+ 1722  git cherry-pick bf86406f5f6adbce9c1e1471865b895f1085bf5f
+ 1723  git cherry-pick d6fd4003aa899afa13a8c6693d8e96494eedd752
+ 1724  git upstream
+ 1725  s
+ 1726  cd frontend
+ 1727  cd admin
+ 1728  pnpm start
+ 1729  s
+ 1730  git switch develop
+ 1731  git pull --rebase
+ 1732  cd ..
+ 1733  cd eshop
+ 1734  git pull --rebase
+ 1735  git stash push
+ 1736  git pull --rebase
+ 1737  git stash pop
+ 1738  pnpm dev
+ 1739  s
+ 1740  cd ..
+ 1741  s
+ 1742  d
+ 1743  git add .
+ 1744  git commit -m "Add integration api key to basket service worker requests, fix app crashing on sending order"
+ 1745  git push
+ 1746  git switch -
+ 1747  pnpm dev
+ 1748  cd frontend/admin
+ 1749  pnpm start
+ 1750  pnpm dev -p 3001 
+ 1751  s
+ 1752  cd ..
+ 1753  cd client_admin
+ 1754  pnpm start
+ 1755  s
+ 1756  git add .
+ 1757  git commit -m "Fix misc minor issues"
+ 1758  git push
+ 1759  git pull --rebase
+ 1760  git push
+ 1761  cd ..
+ 1762  cd admin
+ 1763  pnpm start
+ 1764  s
+ 1765  git add .
+ 1766  git commit -m "Fix possibly undefined apiData in adapter"
+ 1767  git push
+ 1768  git pull --rebase
+ 1769  git push
+ 1770  s
+ 1771  git add .
+ 1772  git commit -m "Reflect code review suggestions"
+ 1773  git push
+ 1774  s
+ 1775  git add .
+ 1776  git commit -m "Fix copy paste issue"
+ 1777  git push
+ 1778  git pull --rebase
+ 1779  git push
+ 1780  s
+ 1781  tsc --noEmit
+ 1782  cd admin
+ 1783  tsc --noEmit
+ 1784  git add .
+ 1785  git commit -m "Rename nonsensical variable name"
+ 1786  git push
+ 1787  s
+ 1788  git switch develop
+ 1789  s
+ 1790  cd ..
+ 1791  s
+ 1792  git add .
+ 1793  git commit -m "Remove stray semicolon"
+ 1794  git pull --rebase
+ 1795  git push
+ 1796  git switch -
+ 1797  git pull --rebase
+ 1798  s
+ 1799  git add .
+ 1800  git commit -m "Fix some issues"
+ 1801  git push
+ 1802  s
+ 1803  git switch develop
+ 1804  git pull --rebase
+ 1805  s
+ 1806  git add .
+ 1807  git reset .
+ 1808  git checkout -b "feature/VWA-3240_vinisto-plus-sets-fixes-1"
+ 1809  git add .
+ 1810  git upstream
+ 1811  s
+ 1812  git commit -m "Fix some issues"
+ 1813  git push
+ 1814  s
+ 1815  git add .
+ 1816  git commit -m "Fxi wrong property name"
+ 1817  git push
+ 1818  s
+ 1819  git add .
+ 1820  git commit -m "Steal Zdenda's changes"
+ 1821  git push
+ 1822  git pull --rebase
+ 1823  git push
+ 1824  pnpm dev -p 3001 
+ 1825  s
+ 1826  git stash push
+ 1827  pnpm start
+ 1828  d
+ 1829  cd ..
+ 1830  cd client_admin
+ 1831  pnpm start
+ 1832  s
+ 1833  git add .
+ 1834  git commit -m "Apply multiple fixes and refactors"
+ 1835  git push
+ 1836  git pull --rebase
+ 1837  s
+ 1838  git add .
+ 1839  git commit -m "Fix some minor issues in client admin"
+ 1840  git push
+ 1841  git switch develop
+ 1842  git pull --rebase
+ 1843  git checkout -b "feature/VWA-3415_misc-fullfillment-fixes"
+ 1844  git cherry-pick 22f38baaae0b88baec1378e69f444ddd7615a003
+ 1845  git reset HEAD~
+ 1846  s
+ 1847  git add .
+ 1848  git commit -m "Minor client admin fix"
+ 1849  git cherry-pick 7c5aafac4e53a4f90471026d519d33a400f48c17
+ 1850  git upstream
+ 1851  git switch -
+ 1852  git rebase -i HEAD~~~
+ 1853  git br
+ 1854  git switch feature/VWA-3240_vinisto-plus-sets-fixes-1
+ 1855  git rebase -i HEAD~~~~
+ 1856  git push --force
+ 1857  s
+ 1858  git br
+ 1859  git switch feature/VWA-3415_misc-fullfillment-fixes
+ 1860  git pull --rebase
+ 1861  git add .
+ 1862  git commit -m "Reflect suggested changes"
+ 1863  git push
+ 1864  cd client_admin
+ 1865  tsc --noEmit
+ 1866  s
+ 1867  git add .
+ 1868  git commit -m "Apply changes'\n"
+ 1869  git commit --amend
+ 1870  gti push
+ 1871  tsc --noEmit
+ 1872  git push
+ 1873  gti pull --rebase
+ 1874  git pull --rebase
+ 1875  git push
+ 1876  /Volumes/Adobe\ Photoshop\ 26.10\ \(UB\)/AdobeInstaller/InstallAdobe.command ; exit;
+ 1877  s
+ 1878  git add .
+ 1879  git commit -m "Fix B2B price not being loaded"
+ 1880  git push
+ 1881  pnpm dev -p 3001 
+ 1882  cd frontend/advisor
+ 1883  tsc --noEmit
+ 1884  pnpm dev
+ 1885  pnpm start
+ 1886  cd ..
+ 1887  cd admin
+ 1888  pnpm start
+ 1889  s
+ 1890  cd ..
+ 1891  s
+ 1892  git add .
+ 1893  git commit -m "Fix multiple issues across all apps"
+ 1894  git push
+ 1895  s
+ 1896  git add .
+ 1897  git commit -m "Reflect suggestion"
+ 1898  git push
+ 1899  git pull --rebase
+ 1900  git push
+ 1901  cd eshop
+ 1902  pnpm list next
+ 1903  s
+ 1904  br
+ 1905  git switch feature/VWA-3240_vinisto-plus-sets-fixes-1
+ 1906  git pull --rebase
+ 1907  git switch develop
+ 1908  git pull --rebase
+ 1909  git switch -
+ 1910  git rebase develop
+ 1911  s
+ 1912  git push --force
+ 1913  cd frontend/admin
+ 1914  pnpm start
+ 1915  cd frontend/client_admin
+ 1916  pnpm start
+ 1917  s
+ 1918  top
+ 1919  s
+ 1920  git add .
+ 1921  git commit -m "Reflect code review suggestions"
+ 1922  git push
+ 1923  git pull --rebase
+ 1924  git push
+ 1925  cd  eshop
+ 1926  tsc --noEmit
+ 1927  s
+ 1928  git add .
+ 1929  git commit -m "Make optional chaining consistent, introduce early return"
+ 1930  git push
+ 1931  git switch develop
+ 1932  tsc --noEmit
+ 1933  git checkout -b "feature/VWA-3415_advisor-query-params-fix"
+ 1934  git add .
+ 1935  s
+ 1936  git commit -m "Fix omitted legacy price level"
+ 1937  git upstream
+ 1938  top
+ 1939  cd xweba
+ 1940  pnpm init -y
+ 1941  pnpm init
+ 1942  pnpm i express
+ 1943  ls
+ 1944  cd Dev
+ 1945  cd xweba
+ 1946  pnpm i zod
+ 1947  cd ..
+ 1948  node index.js
+ 1949  nodemon
+ 1950  node
+ 1951  node index.js
+ 1952  pnpm i body-parser
+ 1953  node index.js
+ 1954  s
+ 1955  git checkout HEAD .
+ 1956  git switch develop
+ 1957  git pull --rebase
+ 1958  git checkout -b "feature/VWA-3440_admin-toolbar-permission"
+ 1959  s
+ 1960  git add .
+ 1961  git commit -m "Add toolbar permission to enum"
+ 1962  s
+ 1963  git add .
+ 1964  git commit -m "Change isSuperAdmin to hasAdminToolbarPermission check"
+ 1965  git upstream
+ 1966  cd frontend/eshop
+ 1967  tsc --noEmit
+ 1968  s
+ 1969  git add .
+ 1970  git commit -m "Fix some issues"
+ 1971  pnpm gt
+ 1972  s
+ 1973  cd ..
+ 1974  s
+ 1975  git add .
+ 1976  git commit -m "Update types"
+ 1977  git push
+ 1978  s
+ 1979  git add .
+ 1980  s
+ 1981  git commit -m "Fix wrong fallback type"
+ 1982  git push
+ 1983  cd frontend/eshop
+ 1984  pnpm dev
+ 1985  s
+ 1986  cd ..
+ 1987  s
+ 1988  git add .
+ 1989  git reset .
+ 1990  s
+ 1991  git add .
+ 1992  git commit -m "Attempt to fix issues"
+ 1993  git push
+ 1994  s
+ 1995  git add .
+ 1996  git commit -m "Improve chat hiding"
+ 1997  git push
+ 1998  s
+ 1999  d
+ 2000  git add .
+ 2001  s
+ 2002  git add .
+ 2003  git commit -m "Fix hiding chat"
+ 2004  git push
+ 2005  s
+ 2006  git switch develop
+ 2007  git pull --rebase
+ 2008  cd frontend/eshop
+ 2009  pnpm list next
+ 2010  git checkout -b feature/VWA-0000_update-dependencies
+ 2011  pnpm install next@15.2.6
+ 2012  cd ..
+ 2013  cat package.json
+ 2014  pnpm sync:list
+ 2015  pnpm sync:lint
+ 2016  pnpm sync:fix
+ 2017  s
+ 2018  d
+ 2019  git add .
+ 2020  git commit -m "Update nextjs, sync dependencies"
+ 2021  git upstream
+ 2022  cd eshop
+ 2023  tsc --noEmit
+ 2024  s
+ 2025  git add .
+ 2026  git commit -m "Reflect code review comments"
+ 2027  s
+ 2028  cd ..
+ 2029  git add .
+ 2030  git commit -m "React to code review comments"
+ 2031  git push
+ 2032  s
+ 2033  git add .
+ 2034  git commit -m "Remove unneccessary dev dependency"
+ 2035  git push
+ 2036  git switch develop
+ 2037  git br | grep '3092'
+ 2038  git switch bugfix/vwa-3092_gift-visible-on-product-detail
+ 2039  git pull --rebase
+ 2040  git diff develop
+ 2041  git log
+ 2042  git show  fc1ac7afc5d87ca6fda54bd274ad04eda997b6a8
+ 2043  git switch develop
+ 2044  git checkout -b "bugfix/VWA-3092_gifts-on-product-detail"
+ 2045  cd eshop
+ 2046  pnpm dev
+ 2047  cd frontend/eshop
+ 2048  tsc --noEmit
+ 2049  cd ..
+ 2050  tsc --noEmit
+ 2051  s
+ 2052  cd admin
+ 2053  tsc --noEmit
+ 2054  cd ..
+ 2055  cd client_admin
+ 2056  tsc --noEmit
+ 2057  s
+ 2058  git add .
+ 2059  cd ..
+ 2060  git add .
+ 2061  s
+ 2062  git commit -m "Filter addons on product detail by isVisibleOnDetail (FE - api does not implements this filter)"
+ 2063  git upstream
+ 2064  br
+ 2065  git switch feature/VWA-0000_update-dependencies
+ 2066  cd frontend
+ 2067  cd advisor
+ 2068  pnpm install
+ 2069  pnpm gt
+ 2070  pnpm install
+ 2071  pnpm gt
+ 2072  cd ..
+ 2073  cd client_admin
+ 2074  pnpm install
+ 2075  s
+ 2076  cd ..
+ 2077  s
+ 2078  git add .
+ 2079  git commit -m "Regard code review suggestions"
+ 2080  git push
+ 2081  s
+ 2082  git switch develop
+ 2083  git checkout -b "feature/VWA-3446_strapi-search"
+ 2084  cd eshop
+ 2085  pnpm dev
+ 2086  s
+ 2087  git add .
+ 2088  git commit -m "Implement basic strapi landings search"
+ 2089  git upstream
+ 2090  s
+ 2091  git add .
+ 2092  s
+ 2093  git add .
+ 2094  git diff --cached
+ 2095  git commit -m "Regard code review suggestions"
+ 2096  git push
+ 2097  s
+ 2098  git switch feature/VWA-3440_admin-toolbar-permission
+ 2099  git pull --rebase
+ 2100  git rebase -i fdc6526f26fb02c33df754d843ddd43eb15abd34~
+ 2101  git push --force
+ 2102  git fetch origin release/2025-12-11
+ 2103  git switch release/2025-12-11
+ 2104  git cherry-pick ff2f4ecba47efa3ede9f38c9f94f658b2b4c964c
+ 2105  s
+ 2106  git push
+ 2107  git br
+ 2108  git switch feature/VWA-3440_admin-toolbar-permission
+ 2109  git switch develop
+ 2110  git pull --rebaser
+ 2111  git pull --rebase
+ 2112  git switch -
+ 2113  git merge develop
+ 2114  git push
+ 2115  git switch develop
+ 2116  git pull --rebase
+ 2117  git switch -
+ 2118  git merge develop
+ 2119  git push
+ 2120  git br
+ 2121  git switch feature/VWA-0000_update-dependencies
+ 2122  git pull --rebase
+ 2123  pnpx @next/codemod@canary upgrade latest\n
+ 2124  s
+ 2125  cd frontend/eshop
+ 2126  pnpx @next/codemod@canary upgrade latest\n
+ 2127  pnpm dev
+ 2128  s
+ 2129  git diff
+ 2130  pnpm dev
+ 2131  cd ..
+ 2132  s
+ 2133  git add .
+ 2134  s
+ 2135  d
+ 2136  git reset .
+ 2137  s
+ 2138  pnpm lint --fix
+ 2139  cd eshop
+ 2140  pnpm lint --fix
+ 2141  tsc --noEmit
+ 2142  tsc --version
+ 2143  pnpm install
+ 2144  tsc --noEmit
+ 2145  pnpm dedupe
+ 2146  tsc --noEmit
+ 2147  pnpm build:dev
+ 2148  cd ..
+ 2149  pnpm install
+ 2150  cd eshop
+ 2151  pnpm install
+ 2152  tsc --noEmit
+ 2153  pnpm install
+ 2154  pnpm list @types/react
+ 2155  pnpm install
+ 2156  tsc --noEmit
+ 2157  pnpm store status
+ 2158  pnpm install
+ 2159  s
+ 2160  pnpm install
+ 2161  s
+ 2162  pnpm install
+ 2163  tsc --noEmit
+ 2164  cd dist
+ 2165  cd ..
+ 2166  pnpm start
+ 2167  pnpm store prune
+ 2168  pnpm install
+ 2169  tsc --noEmit
+ 2170  pnpm install react-error-boundary@latest
+ 2171  pnpm install @types/react@latest
+ 2172  pnpm install reactt@latest
+ 2173  tsc --noEmit
+ 2174  cd frontend/eshop
+ 2175  tsc --noEmit
+ 2176  pnpm why
+ 2177  pnpm why @types/react
+ 2178  s
+ 2179  cd ..
+ 2180  pnpm why @types/react
+ 2181  cd eshop
+ 2182  pnpm why @types/react
+ 2183  s
+ 2184  cd ..
+ 2185  git add .
+ 2186  git commit -m "Update to nextjs 16 and react 18 (wip, type issues)"
+ 2187  cd eshop
+ 2188  pnpm why @types/react
+ 2189  pnpm install react-intl@latest
+ 2190  pnpm why @types/react
+ 2191  tsc --noEmit
+ 2192  pnpm dev
+ 2193  pnpm install
+ 2194  pnpm why @types/react
+ 2195  pnpm install
+ 2196  tsc --noEmit
+ 2197  cd ..
+ 2198  cd admin
+ 2199  tsc --noEmit
+ 2200  cd ..
+ 2201  pnpm install
+ 2202  cd eshop
+ 2203  tsc --noEmit
+ 2204  cd ..
+ 2205  tsc --noEmit
+ 2206  pnpm install
+ 2207  s
+ 2208  pnpm -v
+ 2209  pnpm self-update @latest
+ 2210  brew upgrade pnpm
+ 2211  pnpm -v
+ 2212  $PROFILE
+ 2213  zsh exec
+ 2214  exec zsh -l
+ 2215  pnpm -v
+ 2216  whare pnpm
+ 2217  where pnpm
+ 2218  pnpm -v
+ 2219  cd frontend/eshop
+ 2220  s
+ 2221  pnpm why @types/react@18
+ 2222  cd ..
+ 2223  cd admin
+ 2224  pnpm install react@19 @types/react@19
+ 2225  pnpm dev
+ 2226  pnpm start
+ 2227  pnpm install react-dom@19
+ 2228  pnpm install
+ 2229  pnpm start
+ 2230  pnpx codemod@latest react/19/migration-recipe\n
+ 2231  d
+ 2232  tsc --noEmit
+ 2233  pnpm i react-intl@latest
+ 2234  pnpm install
+ 2235  pnpm why @types/react@18
+ 2236  tsc --noEmit
+ 2237  s
+ 2238  tsc --noEmit
+ 2239  cd ..
+ 2240  cd client_admin
+ 2241  pnpm install react@19 react-dom@19  @types/react@19 
+ 2242  pnpx codemod@latest react/19/migration-recipe\n
+ 2243  pnpx types-react-codemod@latest preset-19
+ 2244  npx types-react-codemod@latest preset-19 .
+ 2245  pnpm start
+ 2246  s
+ 2247  cd ..
+ 2248  cd admin
+ 2249  pnpx types-react-codemod@latest preset-19 .
+ 2250  tsc --noEmit
+ 2251  cd ..
+ 2252  cd advisor
+ 2253  pnpm install react@19 react-dom@19  @types/react@19
+ 2254  s
+ 2255  pnpx types-react-codemod@latest preset-19 .
+ 2256  tsc --noEmit
+ 2257  cd ../packages/vinisto-ui
+ 2258  pnpm install react@19 react-dom@19  @types/react@19
+ 2259  pnpx types-react-codemod@latest preset-19 .
+ 2260  s
+ 2261  cd ..
+ 2262  cd admin
+ 2263  tsc --noEmit
+ 2264  cd client_admin
+ 2265  cd ..
+ 2266  cd client_admin
+ 2267  tsc --noEmit
+ 2268  pnpm install react-intl@latest
+ 2269  tsc --noEmit
+ 2270  s
+ 2271  tsc --noEmit
+ 2272  cd ..
+ 2273  cd admin
+ 2274  cd ..
+ 2275  cd eshop
+ 2276  tsc --noEmit
+ 2277  pnpm install react-intl@latest
+ 2278  tsc --noEmit
+ 2279  s
+ 2280  clear
+ 2281  tsc --noEmit
+ 2282  pnpm install @headlessui/react@latest
+ 2283  pnpm list  @headlessui/react@latest
+ 2284  pnpm list  @headlessui/react
+ 2285  tsc --noEmit
+ 2286  s
+ 2287  cd ..
+ 2288  s
+ 2289  git add .
+ 2290  s
+ 2291  git commit -m "Update React to 19, fix ts issues"
+ 2292  git push
+ 2293  cd eshop
+ 2294  pnpm dev
+ 2295  pnpm remove reactt
+ 2296  cd frontend/eshop
+ 2297  pnpm remove reactt
+ 2298  cd frontend/eshop
+ 2299  pnpm dev
+ 2300  s
+ 2301  cd ..
+ 2302  s
+ 2303  git add pnpm-lock.yaml eshop/package.json
+ 2304  s
+ 2305  git commit -m "Remove 'reactt' package"
+ 2306  git push
+ 2307  git add .
+ 2308  git commit -m "Clean up"
+ 2309  git push
+ 2310  git pull --rebase
+ 2311  git push
+ 2312  pnpm dev
+ 2313  pnpm why react@18
+ 2314  pnpm dedupe react
+ 2315  d
+ 2316  s
+ 2317  git add pnpm-lock.yaml
+ 2318  git commit -m "Dedupe react"
+ 2319  git push
+ 2320  s
+ 2321  git add .
+ 2322  git commit -m "Fix keywords on product detail"
+ 2323  git push
+ 2324  s
+ 2325  pnpm build:dev
+ 2326  pnpm start
+ 2327  s
+ 2328  git add .
+ 2329  git commit -m "Remove mysteriously added string"
+ 2330  git push
+ 2331  git pull --rebase
+ 2332  git push
+ 2333  s
+ 2334  git reset --soft HEAD~
+ 2335  s
+ 2336  git reset eslint.config.mjs
+ 2337  git reset __eslint.config.mjs
+ 2338  s
+ 2339  git commit --amend
+ 2340  git push --force
+ 2341  s
+ 2342  git add .
+ 2343  git commit -m "Temporarily disable new eslint config created during next update (which doesn't work)"
+ 2344  git push
+ 2345  pnpm dev
+ 2346  cd eshop
+ 2347  pnpm dev
+ 2348  as
+ 2349  s
+ 2350  d
+ 2351  git stash push
+ 2352  br
+ 2353  git switch feature/VWA-3446_strapi-search
+ 2354  git pull --rebase
+ 2355  pnpm dev
+ 2356  pnpm install
+ 2357  pnpm dev
+ 2358  s
+ 2359  br
+ 2360  git switch feature/VWA-0000_update-dependencies
+ 2361  pnpm install
+ 2362  pnpm dev
+ 2363  s
+ 2364  d
+ 2365  git stash pop
+ 2366  pnpm list nuqs
+ 2367  cd ..
+ 2368  pnpm list -r nuqs
+ 2369  pnpm why react@18
+ 2370  pnpm list -r react
+ 2371  s
+ 2372  git restore eshop/src/Components/DocumentHeader
+ 2373  s
+ 2374  pnpm dev
+ 2375  s
+ 2376  git add .
+ 2377  git reset next-env.d.ts
+ 2378  s
+ 2379  git commit -m "Remove all DocumentHeaderContext references"
+ 2380  git push
+ 2381  cd ..
+ 2382  cd packages
+ 2383  cd vinisto-shared
+ 2384  pnpm install react@latest
+ 2385  s
+ 2386  cd ..
+ 2387  s
+ 2388  git add .
+ 2389  git commit -m "Fix missing update of react 
+ 2390  git commit -m "Fix missing update of react in vinisto-shared"
+ 2391  git push
+ 2392  s
+ 2393  git switch develop
+ 2394  git checkout -b "feature/eshop-fix-env"
+ 2395  git pnpm install env-cmd
+ 2396  cd eshop
+ 2397  pnpm install env-cmd
+ 2398  s
+ 2399  pnpm remove dotenv-cli
+ 2400  pnpm build:dev
+ 2401  pnpm build
+ 2402  pnpm build:dev
+ 2403  pnpm start
+ 2404  pnpm build:dev
+ 2405  pnpm start
+ 2406  pnpm build:dev
+ 2407  pnpm start
+ 2408  git br
+ 2409  s
+ 2410  git checkout HEAD .
+ 2411  s
+ 2412  cd ..
+ 2413  git checkout HEAD .
+ 2414  s
+ 2415  br
+ 2416  git switch feature/VWA-0000_update-dependencies
+ 2417  cd packages
+ 2418  cd vinisto-shared/
+ 2419  pnpm install react-dom@latest
+ 2420  s
+ 2421  cd ..
+ 2422  s
+ 2423  cd ..
+ 2424  cd packages/vinisto-shared
+ 2425  pnpm i @types/react@19 types/react-dom@19
+ 2426  cd ..
+ 2427  pnpm dedupe react react-dom @types-react @types/react-dom
+ 2428  s
+ 2429  cd packages/vinisto-shared
+ 2430  pnpm install
+ 2431  s
+ 2432  cd ..
+ 2433  s
+ 2434  ls
+ 2435  cd vinisto-api-client
+ 2436  pnpm install
+ 2437  s
+ 2438  cd ..
+ 2439  ls
+ 2440  cd vinisto-shared
+ 2441  pnpm install
+ 2442  cd ..
+ 2443  ls
+ 2444  cd vinisto_ui
+ 2445  cd vinisto-ui
+ 2446  pnpm install
+ 2447  cd ..
+ 2448  cd admin
+ 2449  cd ..
+ 2450  pnpm sync:lint
+ 2451  pnpm sync:fix
+ 2452  s
+ 2453  git add .
+ 2454  git commit -m "Fix all update mismatches"
+ 2455  git push
+ 2456  git pull --rebase
+ 2457  pnpm dedupe react-intl
+ 2458  s
+ 2459  pnpm dedupe
+ 2460  cd admin
+ 2461  pnpm install @typescript-eslint@latest
+ 2462  pnpm install eslint-config-prettier@latest eslint-plugin-import@latest eslint-plugin-jest@latest eslint-plugin-a11y@latest  eslint-plugin-prettier@latest  eslint-plugin-react@latest eslint-plugin-react-hooks@latest
+ 2463  pnpm install eslint-config-prettier@latest eslint-plugin-import@latest eslint-plugin-jest@latest eslint-plugin-jsx-a11y@latest  eslint-plugin-prettier@latest  eslint-plugin-react@latest eslint-plugin-react-hooks@latest
+ 2464  pnpm install eslint-config-prettier@latest eslint-plugin-import@latest eslint-plugin-jest@latest eslint-plugin-jsx-a11y@latest  eslint-plugin-prettier@latest  eslint-plugin-react@latest eslint-plugin-react-hooks@latest @typescript-eslint/eslint-plugin@latest
+ 2465  pnpm install eslint-config-prettier@latest eslint-plugin-import@latest eslint-plugin-jest@latest eslint-plugin-jsx-a11y@latest  eslint-plugin-prettier@latest  eslint-plugin-react@latest eslint-plugin-react-hooks@latest @typescript-eslint/eslint-plugin@latest -D
+ 2466  cd ..
+ 2467  cat package
+ 2468  cat package.json
+ 2469  pnpm install eslint-config-prettier@latest eslint-plugin-import@latest eslint-plugin-prettier@latest eslint-plugin-react@latest
+ 2470  pnpm install eslint-config-prettier@latest eslint-plugin-import@latest eslint-plugin-prettier@latest eslint-plugin-react@latest -D -w
+ 2471  pnpm sync:lint
+ 2472  cd client_admin
+ 2473  pnpm install eslint-config-prettier@latest eslint-plugin-import@latest eslint-plugin-prettier@latest eslint-plugin-react@latest -D
+ 2474  cd ..
+ 2475  cd eshop
+ 2476  pnpm install eslint-config-prettier@latest eslint-plugin-import@latest eslint-plugin-prettier@latest eslint-plugin-react@latest -D
+ 2477  cd advisor
+ 2478  pnpm install eslint-config-prettier@latest eslint-plugin-import@latest eslint-plugin-prettier@latest eslint-plugin-react@latest -D
+ 2479  cd ../packages/vinisto_ui
+ 2480  cd ../packages/vinisto-ui
+ 2481  pnpm install eslint-config-prettier@latest eslint-plugin-import@latest eslint-plugin-prettier@latest eslint-plugin-react@latest -D
+ 2482  d
+ 2483  cd ..
+ 2484  cd vinisto-shared
+ 2485  cat package.json
+ 2486  cd ..
+ 2487  cd client_admin
+ 2488  pnpm install eslint-plugin-react-hooks@latest -D
+ 2489  pnpm install eslint-plugin-jsx-a11y@latest
+ 2490  cd ..
+ 2491  cd admin
+ 2492  code package.json
+ 2493  cd ..
+ 2494  pnpm sync:lint
+ 2495  pnpm sync
+ 2496  s
+ 2497  cat package.json
+ 2498  pnpm sync:list
+ 2499  pnpm sync:fix
+ 2500  pnpm sync:list
+ 2501  s
+ 2502  cd admin
+ 2503  pnpm lint
+ 2504  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src
+ 2505  cd ..
+ 2506  pnpm dlx @eslint/migrate-config .eslintrc.json
+ 2507  pnpm dlx @eslint/migrate-config .eslintrc.base.json 
+ 2508  pnpm install @eslint/compat globals @eslint/js @eslint/eslintrc -D
+ 2509  pnpm install @eslint/compat globals @eslint/js @eslint/eslintrc -D -w
+ 2510  pnpm dlx @eslint/migrate-config .eslintrc.base.json 
+ 2511  cd admin
+ 2512  pnpm dlx @eslint/migrate-config .eslintrc.json 
+ 2513  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src
+ 2514  git stash push -m "eslint"
+ 2515  s
+ 2516  cd ..
+ 2517  cd eshop
+ 2518  eslint
+ 2519  pnpm eslint
+ 2520  pnpm install -D eslint@8
+ 2521  pnpm eslint
+ 2522  pnpm install
+ 2523  pnpm why @typescript-eslint/no-empty-function
+ 2524  cd ..
+ 2525  pnpm why @typescript-eslint/no-empty-function
+ 2526  pnpm install @typescript-eslint
+ 2527  pnpm install @typescript-eslint -w
+ 2528  cd eshop
+ 2529  pnpm install
+ 2530  pnpm dedupe
+ 2531  s
+ 2532  cd ..
+ 2533  s
+ 2534  cd ..
+ 2535  s
+ 2536  git add .
+ 2537  s
+ 2538  git commit -m "Regress to eslint v8 (as v9 was completely broken)"
+ 2539  git push
+ 2540  pnpm install --resolution-only
+ 2541  cd frontend
+ 2542  pnpm install --resolution-only
+ 2543  cd eshop
+ 2544  pnpm install @tanstack/react-query@4
+ 2545  s
+ 2546  d
+ 2547  pnpm install @tanstack/react-query@4.42.0
+ 2548  pnpm install react-final-form@7
+ 2549  pnpm install @tanstack/react-query-devtools@4.42.0
+ 2550  pnpm install final-form@5
+ 2551  pnpm uninstall react-helmet-async
+ 2552  pnpm install react-responsive-pagination@2.12
+ 2553  cd ..
+ 2554  pnpm sync:list
+ 2555  pnpm sync:fix
+ 2556  pnpm sync:list
+ 2557  cd eshop
+ 2558  pnpm install
+ 2559  pnpm dev
+ 2560  d
+ 2561  s
+ 2562  git add eshop/src/app/(eshop)/vyhledat/[...query]/page.tsx eshop/src/pages-spa/Vinistoteque/index.tsx
+ 2563  git add src/app/(eshop)/vyhledat/[...query]/page.tsx src/pages-spa/Vinistoteque/index.tsx
+ 2564  git add ./src/app/(eshop)/vyhledat/[...query]/page.tsx ./src/pages-spa/Vinistoteque/index.tsx
+ 2565  s
+ 2566  git add eshop/src/pages-spa/Vinistoteque/index.tsx
+ 2567  s
+ 2568  git add eshop/src/app/(eshop)/vyhledat/[...query]/page.tsx
+ 2569  git add "eshop/src/app/(eshop)/vyhledat/[...query]/page.tsx"
+ 2570  s
+ 2571  git commit -m "Remove console.logs and unused imports"
+ 2572  s
+ 2573  pnpm sync:list
+ 2574  d
+ 2575  pnpm install --resolution-only
+ 2576  cd admin
+ 2577  pnpm install final-form-arrays@latest 
+ 2578  d
+ 2579  cd ../client_admin
+ 2580  pnpm install react-final-form-listeners@latest
+ 2581  pnpm install react-switch@latest
+ 2582  cd ..
+ 2583  pnpm sync:list
+ 2584  pnpm sync:fix
+ 2585  cd client_admin
+ 2586  pnpm install
+ 2587  pnpm dev
+ 2588  pnpm start
+ 2589  cd ../admin
+ 2590  pnpm start
+ 2591  pnpm lint --fix
+ 2592  pnpm eslint
+ 2593  pnpm install
+ 2594  git add .
+ 2595  git commit -m "Update dependencies whenever possible to match peer dependencies"
+ 2596  s
+ 2597  cd ..
+ 2598  git add .
+ 2599  git commit --amend
+ 2600  s
+ 2601  cd admin
+ 2602  tsc --noEmit
+ 2603  pnpm start
+ 2604  tsc --noEmit
+ 2605  git add .
+ 2606  git commit -m "Fix type errors raised by react-final-form version bump (admin, wip)"
+ 2607  git push
+ 2608  git pull --rebase
+ 2609  s
+ 2610  cd ..
+ 2611  s
+ 2612  git add .
+ 2613  git commit -m "Fix type errors raised by react-final-form version bump (admin, wip)"
+ 2614  git push
+ 2615  git pull --rebase
+ 2616  tsc --noEmit
+ 2617  cd admin
+ 2618  tsc --noEmit
+ 2619  git add .
+ 2620  git commit -m "Fix type errors raised by react-final-form version bump (admin, done)"
+ 2621  s
+ 2622  cd ..
+ 2623  pnpm sync:list
+ 2624  pnpm sync:lint
+ 2625  s
+ 2626  pnpm install --resolution-only
+ 2627  s
+ 2628  git log
+ 2629  git push
+ 2630  git pull --rebase
+ 2631  git push
+ 2632  cd admin
+ 2633  pnpm install final-form-arrays@latest
+ 2634  tsc --noEmit
+ 2635  pnpm install react-final-form-arrays@latest
+ 2636  d
+ 2637  cd ..
+ 2638  pnpm sync:list
+ 2639  s
+ 2640  git add .
+ 2641  git commit -m "Update react-final-form-arrays"
+ 2642  git switch develop
+ 2643  git pull --rebase
+ 2644  git fetch origin feature/VWA-3445-banners
+ 2645  git switch feature/VWA-3445-banners
+ 2646  git pull --rebase
+ 2647  git checkout -b "feature/VWA-3471_banners-enhancement-admin"
+ 2648  cd admin
+ 2649  pnpm install
+ 2650  pnpm start
+ 2651  cd ..
+ 2652  s
+ 2653  git add .
+ 2654  git commit -m "Implement color pickers for banner text (needs polishing)"
+ 2655  git upstreream
+ 2656  git upstreeam
+ 2657  git upstream
+ 2658  git br
+ 2659  git switch feature/VWA-3445-banners
+ 2660  git pull --rebase
+ 2661  br
+ 2662  git checkout -b feature/VWA-3471_banners-enhancement-admin-2
+ 2663  git switch -
+ 2664  git pull --rebase
+ 2665  git switch -
+ 2666  git rebase feature/VWA-3445-banners
+ 2667  s
+ 2668  cd admin
+ 2669  pnpm gt
+ 2670  d
+ 2671  s
+ 2672  d
+ 2673  pnpm gt
+ 2674  s
+ 2675  git add .
+ 2676  git commit -m "Implement cta styles"
+ 2677  git upstream
+ 2678  s
+ 2679  cd ..
+ 2680  s
+ 2681  git checkout -b feature/VWA-3471_banners-enhancement-admin-3
+ 2682  git add .
+ 2683  git commit -m "Fix some issues"
+ 2684  git upstream
+ 2685  s
+ 2686  git stash push
+ 2687  s
+ 2688  git br
+ 2689  git switch feature/VWA-3445-banners
+ 2690  git pull --rebase
+ 2691  git stash pop
+ 2692  git add .
+ 2693  git commit -m "Fix syntactic problems"
+ 2694  git push
+ 2695  git switch develop
+ 2696  git pull --rebase
+ 2697  git switch feature/VWA-3445-banners
+ 2698  git pull --rebase
+ 2699  s
+ 2700  git add .
+ 2701  git checkout -b feature/VWA-3471_banners-enhancement-admin-4
+ 2702  git add .
+ 2703  git commit -m "Fix missing params in mapper"
+ 2704  s
+ 2705  git upstream
+ 2706  s
+ 2707  br
+ 2708  git switch feature/VWA-0000_update-dependencies
+ 2709  git pull --rebase
+ 2710  s
+ 2711  git log
+ 2712  pnpm install
+ 2713  cd client_admin
+ 2714  pnpm install
+ 2715  s
+ 2716  tsc --noEmit
+ 2717  git add .
+ 2718  eslint
+ 2719  pnpm eslint
+ 2720  git add .
+ 2721  git commit -m "Fix type errors in client_admin"
+ 2722  git push
+ 2723  cd ..
+ 2724  cd eshop
+ 2725  tsc --noEmit
+ 2726  git add . 
+ 2727  git commit -m "Fix typescript errors caused by dependencies update"
+ 2728  git push
+ 2729  cd ..
+ 2730  cd advisor
+ 2731  tsc --noEmit
+ 2732  s
+ 2733  pnpm install --only-resolution
+ 2734  pnpm install --resolution-only
+ 2735  s
+ 2736  cd ..
+ 2737  cd vinisto-ui
+ 2738  s
+ 2739  cd packages/vinisto-ui
+ 2740  pnpm update next@latest
+ 2741  d
+ 2742  s
+ 2743  cat package.json
+ 2744  cd ..
+ 2745  cd eshop
+ 2746  pnpm update @next/bundle-analyzer@latest
+ 2747  s
+ 2748  cd ..
+ 2749  pnpm sync:list
+ 2750  pnpm sync:fix
+ 2751  s
+ 2752  cd admin
+ 2753  pnpm update eslint-plugin-react-hooks@6
+ 2754  pnpm start
+ 2755  d
+ 2756  pnpm update eslint-plugin-react@latest
+ 2757  pnpm start
+ 2758  pnpm install
+ 2759  pnpm start
+ 2760  cat package.json
+ 2761  eslint --ext .js,.jsx,.ts,.tsx ./src"
+ 2762  eslint --ext .js,.jsx,.ts,.tsx ./src
+ 2763  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src
+ 2764  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src --fix
+ 2765  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src --fix --silent
+ 2766  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src --fix --errors
+ 2767  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src --fix --ignore
+ 2768  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src --fix --quiet
+ 2769  s
+ 2770  cd ..
+ 2771  s
+ 2772  git add .
+ 2773  git commit -m "Reflext code review suggestions, fix lint errors (admin)"
+ 2774  git pull --rebase
+ 2775  git push
+ 2776  cd eshop
+ 2777  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src --fix
+ 2778  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src --fix --quiet
+ 2779  s
+ 2780  git add .
+ 2781  git commit -m "Fix lint errors (eshop)"
+ 2782  git push
+ 2783  cd ..
+ 2784  cd client_admin
+ 2785  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src
+ 2786  pnpm eslint --ext .js,.jsx,.ts,.tsx ./src --fix --quiet
+ 2787  s
+ 2788  git add .
+ 2789  git commit -m "Fix lint errors (client_admin)"
+ 2790  git push
+ 2791  s
+ 2792  cd ..
+ 2793  s
+ 2794  git add .
+ 2795  s
+ 2796  git push -m "Regard code review suggestions"
+ 2797  git commit -m "Regard code review suggestions"
+ 2798  git push
+ 2799  yarn dev
+ 2800  drizzle-kit push
+ 2801  yarn db:migrate
+ 2802  yarn rebuild
+ 2803  yarn dev
+ 2804  yarn db:migrate
+ 2805  yarn dev
+ 2806  yarn db:migrate
+ 2807  yarn db:generate
+ 2808  yarn install
+ 2809  ./node_modules/.bin/electron-rebuild
+ 2810  yarn db:generate
+ 2811  yarn db:migrate
+ 2812  yarn install
+ 2813  yarn db:migrate
+ 2814  npm rebuild better_sqlite3
+ 2815  yarn db:migrate
+ 2816  yarn rebuild better_sqlite3
+ 2817  ;'
+ 2818  ç
+ 2819  .\node_modules\.bin\electron-rebuild.cmd -f
+ 2820  electron-rebuild -f -w better-sqlite3
+ 2821  yarn run electron-rebuild -f -w better-sqlite3
+ 2822  yarn db:migrate
+ 2823  npm rebuild
+ 2824  yarn db:migrate
+ 2825  yarn db:generate
+ 2826  yarn dev
+ 2827  npm rebuild
+ 2828  yarn dev
+ 2829  npm rebuild sqlite3
+ 2830  yarn dev
+ 2831  ./electron-rebuild -f -w better-sqlite3"
+ 2832  ./electron-rebuild -f -w better-sqlite3
+ 2833  ./node_modules/.bin/electron-rebuild
+ 2834  yarn dev
+ 2835  yarn install
+ 2836  ./node_modules/.bin/electron-rebuild
+ 2837  yarn dev
+ 2838  s
+ 2839  git add .
+ 2840  s
+ 2841  git reset src/main/db/schema/edge.ts
+ 2842  git commit -m "Implement edge creation (wip)"
+ 2843  git push
+ 2844  s
+ 2845  yarn db:migrate
+ 2846  npm rebuild
+ 2847  yarn db:migrate
+ 2848  yarn dev
+ 2849  npm rebuild
+ 2850  yarn dev
+ 2851  npm run dev
+ 2852  yarn rebuild
+ 2853  yarn run electron-rebuild -f -w better-sqlite3
+ 2854  yarn dev
+ 2855  s
+ 2856  git add .
+ 2857  git commit -m "Implement edge creation (wip)"
+ 2858  yarn dev
+ 2859  s
+ 2860  git add .
+ 2861  s
+ 2862  git commit -m "Fix maybe types in createEdgeFromNodes code"
+ 2863  git push
+ 2864  yarn dev
+ 2865  s
+ 2866  git add .
+ 2867  git commit -m "Fix bugs"
+ 2868  git push
+ 2869  yarn dev
+ 2870  cd ..
+ 2871  cd xit1
+ 2872  cd assignment_4
+ 2873  ls
+ 2874  cd assignment_04
+ 2875  ls
+ 2876  history
