@@ -46,7 +46,7 @@ void setPixel(int x, int y, PGMImage *canvas) {
 }
 
 float get_midpoint(float current, float next, int steps, int step) {
-  float step_distance = (next - current) / (float)steps;
+  float step_distance = (next - current) / steps;
   float midpoint = (current + (step_distance * step));
   return midpoint;
 }
@@ -55,40 +55,44 @@ point *reduce_lines(point **points, int line_count, int steps) {
   if (line_count == 1)
     return points[0];
 
-  point **midpoints = (point **)malloc((line_count - 1) * steps * sizeof(point *));
+  point **midpoints = (point **)malloc((line_count - 1) * sizeof(point *));
   if (midpoints == NULL) {
     fprintf(stderr, "Error: Failed to allocate memory for midpoints.\n");
     exit(1);
   }
 
   for (int i = 0; i < line_count - 1; i++) {
-    // midpoints[i] = (point *)malloc(steps * sizeof(point));
+    midpoints[i] = (point *)malloc(steps * sizeof(point));
 
     for (int step = 0; step < steps; step++) {
-      int x_current = points[i][step].x;
-      int y_current = points[i][step].y;
+      float x_current = points[i][step].x;
+      float y_current = points[i][step].y;
 
-      int x_next = points[i + 1][step].x;
-      int y_next = points[i + 1][step].y;
+      float x_next = points[i + 1][step].x;
+      float y_next = points[i + 1][step].y;
 
       midpoints[i][step].x =
-          get_midpoint((float)x_current, (float)x_next, steps, step);
+          get_midpoint(x_current, x_next, steps, step);
       midpoints[i][step].y =
-          get_midpoint((float)y_current, (float)y_next, steps, step);
+          get_midpoint(y_current, y_next, steps, step);
     }
   }
+
+  // free points?
 
   return reduce_lines(midpoints, line_count - 1, steps);
 }
 
 point** create_steps(point *points, int points_count, int steps) {
-  point **midpoints = (point **)malloc((points_count - 1) * steps * sizeof(point *));
+  point **midpoints = (point **)malloc((points_count - 1) * sizeof(point *));
   if (midpoints == NULL) {
     fprintf(stderr, "Error: Failed to allocate memory for midpoints.\n");
     exit(1);
   }
 
   for (int i = 0; i < points_count - 1; i++) {
+    midpoints[i] = malloc(steps * sizeof(point));
+
     int x_current = points[i].x;
     int y_current = points[i].y;
 
@@ -97,72 +101,40 @@ point** create_steps(point *points, int points_count, int steps) {
 
     for (int step = 0; step < steps; step++) {
       midpoints[i][step].x =
-          get_midpoint((float)x_current, (float)x_next, steps, step);
+          get_midpoint(x_current, x_next, steps, step);
       midpoints[i][step].y =
-          get_midpoint((float)y_current, (float)y_next, steps, step);
+          get_midpoint(y_current, y_next, steps, step);
     }
   }
 
   return midpoints;
 }
 
-// void draw_bezier(int (*points)[2], int points_count, int steps, PGMImage
-// *canvas) {
-void draw_bezier(point *points, int points_count, int steps, PGMImage *canvas) {
-  // float midpoints[points_count - 1][steps][2];
-  point midpoints[points_count - 1][steps];
-
-  for (int i = 0; i < points_count - 1; i++) {
-    // int x_current = points[i][0];
-    // int y_current = points[i][1];
-    //
-    // int x_next = points[i + 1][0];
-    // int y_next = points[i + 1][1];
-
-    int x_current = points[i].x;
-    int y_current = points[i].y;
-
-    int x_next = points[i + 1].x;
-    int y_next = points[i + 1].y;
-
-    for (int step = 0; step < steps; step++) {
-      midpoints[i][step].x =
-          get_midpoint((float)x_current, (float)x_next, steps, step);
-      midpoints[i][step].y =
-          get_midpoint((float)y_current, (float)y_next, steps, step);
-    }
-  }
-
-  for (int line_count = 0; line_count < points_count - 2; line_count++) {
-    printf("%i:\n", line_count);
-
-    for (int step_increment = 0; step_increment < steps; step_increment++) {
-      setPixel(get_midpoint(midpoints[line_count][step_increment].x,
-                            midpoints[line_count + 1][step_increment].x, steps,
-                            step_increment),
-               get_midpoint(midpoints[line_count][step_increment].y,
-                            midpoints[line_count + 1][step_increment].y, steps,
-                            step_increment),
-               canvas);
-    }
-  }
-}
-
 int main() {
   PGMImage *blank_canvas = create_blank_image(256, 256);
 
-  // int points[5][2] = {{1, 1}, {32, 120}, {128, 160}, {164, 16}, {256, 0}};
   int const points_count = 5;
-  int const steps = 32;
+  int const steps = 64;
   point points[points_count] = {
-      {1.0, 1.0}, {32.0, 120.0}, {128.0, 160.0}, {164.0, 16.0}, {256.0, 0.0}};
+      {0.0, 0.0}, {32.0, 120.0}, {128.0, 160.0}, {164.0, 16.0}, {256.0, 256.0}};
 
-  // draw_bezier(points, sizeof(points) / sizeof(points[0]), 48, blank_canvas);
-  // draw_bezier(points, sizeof(points) / sizeof(points[0]), 48, blank_canvas);
-  point** foo = create_steps(points, points_count, steps);
+  point** first_iteration = create_steps(points, points_count, steps);
 
-  point* bar = reduce_lines(foo, points_count - 1, steps);
+  point* points_to_plot = reduce_lines(first_iteration, points_count - 1, steps);
 
+  for(int k = 0; k < steps; k++) {
+    setPixel((int)round(points_to_plot[k].x), (int)round(points_to_plot[k].y), blank_canvas);
+  }
+
+  for (int i = 0; i < points_count - 1; i++) {
+    for(int j = 0; j < steps; j++) {
+      setPixel((int)round(first_iteration[i][j].x), (int)round(first_iteration[i][j].y), blank_canvas);
+    }
+    free(first_iteration[i]);
+  }
+
+  free(first_iteration);
+  free(points_to_plot);
 
   pgma_write("bezier.pgm", "Output bezier curve drawing", blank_canvas->xsize,
              blank_canvas->ysize, blank_canvas->maxg, blank_canvas->g);
