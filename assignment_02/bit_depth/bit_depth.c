@@ -13,6 +13,7 @@ typedef struct {
 
 #define RGB_COMPONENT_COLOR 255
 
+// Reading/writing PPM images
 // https://stackoverflow.com/a/2699908/8252267
 static PPMImage *readPPM(const char *filename) {
   char buff[16];
@@ -153,16 +154,23 @@ int main() {
     1,
   };
 
-  PPMImage *image;
-  image = readPPM("test_input_1.ppm");
+  PPMImage *image_a;
+  image_a = readPPM("test_input_1.ppm");
 
-  modify_color_depth(image, &depths_params);
+  modify_color_depth(image_a, &depths_params);
 
-  writePPM("test_output_1.ppm", image);
-  free(image->data);
-  free(image);
-  image = NULL;
+  writePPM("test_output_1.ppm", image_a);
+  free(image_a->data);
+  free(image_a);
+  printf("Image 1 has been processed.\n\n");
 
-  printf("Press Enter to continue...");
-  getchar();
+  PPMImage *image_b;
+  image_b = readPPM("test_input_2.ppm");
+
+  modify_color_depth(image_b, &depths_params);
+
+  writePPM("test_output_2.ppm", image_b);
+  free(image_b->data);
+  free(image_b);
+  printf("Image 2 has been processed.\n\n");
 }

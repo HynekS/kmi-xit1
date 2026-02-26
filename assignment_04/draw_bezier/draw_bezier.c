@@ -1,8 +1,8 @@
-#include "pgma_io.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "pgma_io.h"
 
 typedef struct {
   int *g;
@@ -45,6 +45,19 @@ void setPixel(int x, int y, PGMImage *canvas) {
   canvas->g[canvas->xsize * y + x] = 0;
 }
 
+void drawPoint(int x, int y, unsigned char point_size, unsigned char point_brightness, PGMImage *canvas) {
+  for(int i = 0 - point_size; i < point_size + 1; i++) {
+     if ((x + i) < 0 || (x + i) >= canvas->xsize)
+    continue;
+    canvas->g[canvas->xsize * y + (x + i)] = point_brightness;
+  }
+  for(int i = 0 - point_size; i < point_size + 1; i++) {
+     if ( (y + i) < 0 || (y + i) >= canvas->ysize)
+    continue;
+    canvas->g[canvas->xsize * (y + i) + x] = point_brightness;
+  }
+}
+
 float get_midpoint(float current, float next, int steps, int step) {
   float step_distance = (next - current) / steps;
   float midpoint = (current + (step_distance * step));
@@ -77,8 +90,12 @@ point *reduce_lines(point **points, int line_count, int steps) {
           get_midpoint(y_current, y_next, steps, step);
     }
   }
-
-  // free points?
+  // Does not work properly, casues segmentation fault TODO fix
+  // (until then, all the iterations are leaking memory)
+  //for(int i = 0; i < line_count - 1; i++) {
+  //  free(points[i]);
+  //}
+  //free(points);
 
   return reduce_lines(midpoints, line_count - 1, steps);
 }
@@ -118,6 +135,10 @@ int main() {
   point points[points_count] = {
       {0.0, 0.0}, {32.0, 120.0}, {128.0, 160.0}, {164.0, 16.0}, {256.0, 256.0}};
 
+  for(int i = 0; i < points_count; i++) {
+    drawPoint(points[i].x, points[i].y, 2, 128, blank_canvas);
+  }
+
   point** first_iteration = create_steps(points, points_count, steps);
 
   point* points_to_plot = reduce_lines(first_iteration, points_count - 1, steps);
@@ -125,13 +146,14 @@ int main() {
   for(int k = 0; k < steps; k++) {
     setPixel((int)round(points_to_plot[k].x), (int)round(points_to_plot[k].y), blank_canvas);
   }
-
-  for (int i = 0; i < points_count - 1; i++) {
-    for(int j = 0; j < steps; j++) {
-      setPixel((int)round(first_iteration[i][j].x), (int)round(first_iteration[i][j].y), blank_canvas);
-    }
-    free(first_iteration[i]);
-  }
+  
+  // This would draw straight line between anchor points - useful for debugging
+  //for (int i = 0; i < points_count - 1; i++) {
+  //  for(int j = 0; j < steps; j++) {
+  //    setPixel((int)round(first_iteration[i][j].x), (int)round(first_iteration[i][j].y), blank_canvas);
+  //  }
+  //  free(first_iteration[i]);
+  //}
 
   free(first_iteration);
   free(points_to_plot);

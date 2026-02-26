@@ -11,7 +11,7 @@ typedef struct {
   int ysize;
 } PGMImage;
 
-PGMImage *pgma_read_to_heap(char *file_name) {
+PGMImage *pgma_read_to_memory(char *file_name) {
   int *g;
   int maxg;
   int xsize;
@@ -194,7 +194,7 @@ PGMImage *change_gamma(PGMImage *img, float gamma, float c) {
 }
 
 int main() {
-  PGMImage *img = pgma_read_to_heap("screws.ascii.pgm");
+  PGMImage *img = pgma_read_to_memory("screws.ascii.pgm");
 
   PGMImage *balanced_histogram_img = histogram_balance(img);
 

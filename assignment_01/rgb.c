@@ -13,6 +13,7 @@ typedef struct {
 
 #define RGB_COMPONENT_COLOR 255
 
+// Reading/writing PPM images
 // https://stackoverflow.com/a/2699908/8252267
 static PPMImage *readPPM(const char *filename) {
   char buff[16];
@@ -159,7 +160,7 @@ void desaturate(PPMImage *img, float magnitude) {
 
       data[i].blue = (unsigned char)roundf(
           ((1 - magnitude) * colorsSumAverage) + (magnitude * blue));
-      
+          
           i++;
     }
   }
@@ -189,15 +190,47 @@ void saturationBalance(PPMImage *img) {
   }
 }
 
-
 int main() {
-  PPMImage *image;
-  image = readPPM("sample_640x426.ppm");
-  saturationBalance(image);
-  writePPM("sample_640x426_2.ppm", image);
-  free(image->data);
-  free(image);
-  image = NULL;
-  printf("Press Enter to continue...");
-  getchar();
+  // NOTE reading the same image 3 times is obviously not very effective - the adjustment functions should probably accept/return new image struct instead
+
+  // Grayscale
+  printf("Performing grayscale conversion on file 'test_input.ppm'\n");
+  PPMImage *image_a;
+  image_a = readPPM("test_input.ppm");
+
+  convertToGrayscale(image_a);
+  writePPM("test_output_grayscale.ppm", image_a);
+
+  free(image_a->data);
+  free(image_a);
+
+  printf("Grayscale conversion has been completed.\n\n");
+
+
+  // Desaturate
+  printf("Performing desaturation on file 'test_input.ppm'\n");
+  PPMImage *image_b;
+  image_b = readPPM("test_input.ppm");
+
+  desaturate(image_b, 0.5);
+  writePPM("test_output_desaturation.ppm", image_b);
+
+  free(image_b->data);
+  free(image_b);
+
+  printf("Desaturation has been completed.\n\n");
+
+
+  // Saturation balance
+  printf("Performing saturation balance on file 'test_input.ppm'\n");
+  PPMImage *image_c;
+  image_c = readPPM("test_input.ppm");
+
+  saturationBalance(image_c);
+  writePPM("test_output_saturation_balance.ppm", image_c);
+
+  free(image_c->data);
+  free(image_c);
+
+  printf("Saturation balance has been completed.\n\n");
 }
