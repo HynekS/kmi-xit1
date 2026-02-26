@@ -1,0 +1,1 @@
+Zápočtové úlohy KMI/XIT1, Hynek Švácha
